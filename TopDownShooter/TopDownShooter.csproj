@@ -17,6 +17,15 @@
     <None Remove="Content\2d\Misc\CursorArrow.xnb" />
     <None Remove="Content\2d\Projectiles\Fireball.xnb" />
     <None Remove="Content\2d\Units\Mobs\Imp.xnb" />
+    <None Remove="Content\Fonts\Arial16.xnb" />
+    <None Remove="Content\Fonts\Arial20Bold.xnb" />
+    <None Remove="Content\Fonts\Arial24.xnb" />
+    <None Remove="Content\Fonts\Lindsey13.xnb" />
+    <None Remove="Content\Fonts\Lindsey15.xnb" />
+    <None Remove="Content\Fonts\Lindsey16.xnb" />
+    <None Remove="Content\Fonts\Lindsey17.xnb" />
+    <None Remove="Content\Fonts\Lindsey18.xnb" />
+    <None Remove="Content\Fonts\Lindsey20.xnb" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\2d\Hero.xnb">
@@ -32,6 +41,33 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\2d\Units\Mobs\Imp.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Fonts\Arial16.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Fonts\Arial20Bold.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Fonts\Arial24.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Fonts\Lindsey13.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Fonts\Lindsey15.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Fonts\Lindsey16.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Fonts\Lindsey17.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Fonts\Lindsey18.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Fonts\Lindsey20.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

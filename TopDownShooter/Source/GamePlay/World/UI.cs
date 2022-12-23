@@ -21,7 +21,7 @@ namespace TopDownShooter
         public SpriteFont font;
         public UI() 
         {
-            font = Globals.content.Load<SpriteFont>("Fonts\\Lindsey20");
+            font = Globals.content.Load<SpriteFont>("Fonts//Arial16");
             
         
         }
