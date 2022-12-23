@@ -16,13 +16,21 @@ namespace TopDownShooter
 {
     public class World
     {
+
+        public int numKilled;
+
         public Vector2 offset;
 
         public Hero hero;
+
+        public UI ui;
+
         public List<Projectile2d> projectiles = new List<Projectile2d>();
         public List<Mob> mobs = new List<Mob>();
         public List<SpawnPoint> spawnPoints = new List<SpawnPoint>();
         public World() {
+
+            numKilled = 0;
 
             hero = new Hero("2d\\Hero",new Vector2(300, 300), new Vector2(48,48));
 
@@ -37,6 +45,8 @@ namespace TopDownShooter
 
             spawnPoints.Add(new SpawnPoint("2d\\Misc\\circle", new Vector2(Globals.screenWidth - 50, 50), new Vector2(35, 35)));
             spawnPoints[spawnPoints.Count - 1].spawnTimer.AddToTimer(1000);
+
+            ui = new UI();
         }
         public virtual void Update()
         {
@@ -66,11 +76,13 @@ namespace TopDownShooter
 
                 if (mobs[i].dead)
                 {
+                    numKilled++;
                     mobs.RemoveAt(i);
                     i--;
                 }
             }
 
+            ui.Update(this);
 
         }
 
@@ -104,7 +116,8 @@ namespace TopDownShooter
 
               
             }
+            ui.Draw(this);
         }
-
+        
     }
 }
