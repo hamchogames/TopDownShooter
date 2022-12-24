@@ -26,24 +26,30 @@ namespace TopDownShooter
         }
         public override void Update(Vector2 OFFSET)
         {
+            bool checkScoll = false;
+
             if (Globals.keyboard.GetPress("A"))
             {
                 pos = new Vector2(pos.X - speed, pos.Y);
+                checkScoll = true;
             }
 
             if (Globals.keyboard.GetPress("D"))
             {
                 pos = new Vector2(pos.X + speed, pos.Y);
+                checkScoll = true;
             }
 
             if (Globals.keyboard.GetPress("W"))
             {
                 pos = new Vector2(pos.X, pos.Y - speed);
+                checkScoll = true;
             }
 
             if (Globals.keyboard.GetPress("S"))
             {
                 pos = new Vector2(pos.X, pos.Y + speed);
+                checkScoll= true;
             }
 
             rot = Globals.RotateTowards(pos, new Vector2(Globals.mouse.newMousePos.X, Globals.mouse.newMousePos.Y));
@@ -53,6 +59,10 @@ namespace TopDownShooter
                 Debug.WriteLine("Fire");
                 GameGlobals.PassProjectile(new Fireball(new Vector2(pos.X, pos.Y), this, new Vector2(Globals.mouse.newMousePos.X, Globals.mouse.newMousePos.Y)));
                 
+            }
+            if (checkScoll)
+            {
+                GameGlobals.CheckScroll(pos);
             }
 
             base.Update(OFFSET);

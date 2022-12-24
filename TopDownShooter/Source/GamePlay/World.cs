@@ -11,6 +11,7 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
+using SharpDX.MediaFoundation;
 #endregion
 namespace TopDownShooter
 {
@@ -36,6 +37,8 @@ namespace TopDownShooter
 
             GameGlobals.PassProjectile = AddProjectile;
             GameGlobals.PassMob = AddMob;
+            GameGlobals.CheckScroll = CheckScroll;
+
             offset = new Vector2(0, 0);
 
             spawnPoints.Add(new SpawnPoint("2d\\Misc\\circle", new Vector2(50, 50), new Vector2(35, 35)));
@@ -94,9 +97,33 @@ namespace TopDownShooter
         {
             projectiles.Add((Projectile2d)INFO);
         }
+
+        public virtual void CheckScroll(Object INFO)
+        {
+            Vector2 tempPos = (Vector2)INFO;
+
+            if (tempPos.X < -offset.X + (Globals.screenWidth * .4f))
+            {
+                offset = new Vector2(offset.X + hero.speed * 2, offset.Y);
+            }
+            if (tempPos.X > -offset.X + (Globals.screenWidth * .6f))
+            {
+                offset = new Vector2(offset.X - hero.speed * 2, offset.Y);
+            }
+
+            if (tempPos.Y < -offset.Y + (Globals.screenHeight * .4f))
+            {
+                offset = new Vector2(offset.X, offset.Y + hero.speed * 2);
+            }
+            if (tempPos.Y > -offset.Y + (Globals.screenHeight * .6f))
+            {
+                offset = new Vector2(offset.X, offset.Y - hero.speed * 2);
+            }
+
+        }
         public virtual void Draw(Vector2 OFFSET)
         {
-            hero.Draw(OFFSET);
+            hero.Draw(offset);
           
             for (int i = 0; i < projectiles.Count; i++)
             {
