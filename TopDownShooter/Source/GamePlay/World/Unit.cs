@@ -31,7 +31,7 @@ namespace TopDownShooter
 
             hitDist = 35.0f;
         }
-        public override void Update(Vector2 OFFSET)
+        public virtual void Update(Vector2 OFFSET, Player ENEMY)
         {
            
 
