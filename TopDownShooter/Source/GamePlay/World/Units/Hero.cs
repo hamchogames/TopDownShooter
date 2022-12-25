@@ -23,6 +23,9 @@ namespace TopDownShooter
 
             speed = 2.0f;
 
+            health = 5;
+            healthMax = health;
+
         }
         public override void Update(Vector2 OFFSET)
         {

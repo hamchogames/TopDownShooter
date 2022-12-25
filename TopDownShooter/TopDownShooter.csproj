@@ -15,6 +15,8 @@
     <None Remove="Content\2d\Hero.xnb" />
     <None Remove="Content\2d\Misc\circle.xnb" />
     <None Remove="Content\2d\Misc\CursorArrow.xnb" />
+    <None Remove="Content\2d\Misc\shade.xnb" />
+    <None Remove="Content\2d\Misc\solid.xnb" />
     <None Remove="Content\2d\Projectiles\Fireball.xnb" />
     <None Remove="Content\2d\Units\Mobs\Imp.xnb" />
     <None Remove="Content\Fonts\Arial16.xnb" />
@@ -35,6 +37,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\2d\Misc\CursorArrow.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\2d\Misc\shade.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\2d\Misc\solid.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\2d\Projectiles\Fireball.xnb">
