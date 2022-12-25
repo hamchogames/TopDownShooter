@@ -21,7 +21,9 @@ namespace TopDownShooter
     {
         private GraphicsDeviceManager _graphics;
         private SpriteBatch spriteBatch;
-        World world;
+        GamePlay gamePlay;
+
+        
 
         Basic2d cursor;
         public Main()
@@ -57,8 +59,8 @@ namespace TopDownShooter
 
             Globals.keyboard = new McKeyboard();
             Globals.mouse = new McMouseControl();
-                    
-            world = new World();
+
+            gamePlay = new GamePlay();
         }
 
 
@@ -74,7 +76,7 @@ namespace TopDownShooter
             Globals.keyboard.Update();
             Globals.mouse.Update();
 
-            world.Update();
+            gamePlay.Update();
 
 
             Globals.keyboard.UpdateOld();
@@ -93,7 +95,7 @@ namespace TopDownShooter
 
 
 
-            world.Draw(Vector2.Zero);
+            gamePlay.Draw();
 
 
 
