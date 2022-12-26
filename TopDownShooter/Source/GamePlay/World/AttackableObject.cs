@@ -26,6 +26,7 @@ namespace TopDownShooter
         public float speed, hitDist, health, healthMax;
         public AttackableObject(string PATH, Vector2 POS, Vector2 DIMS, int OWNERID) : base(PATH, POS, DIMS) 
         {
+            ownerId= OWNERID;
             dead = false;
             speed = 2.0f;
 

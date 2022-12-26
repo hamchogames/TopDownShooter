@@ -41,11 +41,6 @@ namespace TopDownShooter
         {
             ResetWorld = RESETWORLD;
 
-
-          
-
-            
-
             GameGlobals.PassProjectile = AddProjectile;
             GameGlobals.PassMob = AddMob;
             GameGlobals.CheckScroll = CheckScroll;

@@ -18,7 +18,7 @@ namespace TopDownShooter
 {
     public class Spiderling : Mob
     {
-        public McTimer spawnTimer;
+       
         public Spiderling(Vector2 POS, int OWNERID) : base("2d\\Units\\Mobs\\Spider", POS, new Vector2(25, 25), OWNERID)
         {
 

@@ -12,6 +12,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using TopDownShooterPrompt;
+using System.Diagnostics;
 #endregion
 
 
@@ -41,10 +42,12 @@ namespace TopDownShooter
             if (num < 5)
             {
                 tempMob = new Imp(new Vector2(pos.X, pos.Y), ownerId);
+                Debug.WriteLine("Spawn Imp");
             }
             else if (num < 8)
             {
                 tempMob = new Spider(new Vector2(pos.X, pos.Y), ownerId);
+                Debug.WriteLine("Spawn Spider");
             }
 
             if (tempMob != null)

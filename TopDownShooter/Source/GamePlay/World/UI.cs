@@ -35,7 +35,7 @@ namespace TopDownShooter
 
         public void Draw(World WORLD) 
         {
-            string tempStr = "Score" + GameGlobals.score;
+            string tempStr = "Score " + GameGlobals.score;
             Vector2 strDims = font.MeasureString(tempStr);
             Globals.spriteBatch.DrawString(font, tempStr, new Vector2(Globals.screenWidth/2 - strDims.X/2, Globals.screenHeight - 40) , Color.Black);
 
