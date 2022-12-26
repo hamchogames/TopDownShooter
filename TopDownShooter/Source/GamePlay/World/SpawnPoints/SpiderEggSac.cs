@@ -17,34 +17,36 @@ using TopDownShooterPrompt;
 
 namespace TopDownShooter
 {
-    public class SpawnPoint : AttackableObject
+    public class SpiderEggSac : SpawnPoint
     {
-
-        public McTimer spawnTimer = new McTimer(2200); // spawning time
-        public SpawnPoint(string PATH, Vector2 POS, Vector2 DIMS, int OWNERID) : base(PATH, POS, DIMS, OWNERID)
+        int maxSpawns, totalSpawns;
+        public SpiderEggSac(Vector2 POS, int OWNERID) : base("2d\\SpawnPoints\\EggSac", POS, new Vector2(45, 45), OWNERID)
         {
-            dead = false;
-            health = 3;
-            healthMax = health;
-
-            hitDist = 35.0f;
+            totalSpawns = 0;
+            maxSpawns = 3;
         }
         public override void Update(Vector2 OFFSET)
         {
-            spawnTimer.UpdateTimer();
-            if(spawnTimer.Test())
-            {
-                SpawnMob();
-                spawnTimer.ResetToZero();
-            }
+       
 
             base.Update(OFFSET);
         }
 
 
-        public virtual void SpawnMob()
+        public override void SpawnMob()
         {
-            GameGlobals.PassMob(new Imp(new Vector2(pos.X, pos.Y), ownerId));
+            Mob tempMob = new Spiderling(new Vector2(pos.X, pos.Y), ownerId);
+
+            if (tempMob != null)
+            {
+
+                GameGlobals.PassMob(tempMob);
+                totalSpawns++;
+                if(totalSpawns >= maxSpawns)
+                {
+                    dead = true;
+                }
+            }
         }
         public override void Draw(Vector2 OFFSET)
         {

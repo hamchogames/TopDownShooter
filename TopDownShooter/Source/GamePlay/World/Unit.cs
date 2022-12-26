@@ -16,35 +16,19 @@ using Microsoft.Xna.Framework.Media;
 
 namespace TopDownShooter
 {
-    public class Unit : Basic2d
+    public class Unit : AttackableObject
     {
 
-        public bool dead;
-        public float speed, hitDist, health, healthMax;
-        public Unit(string PATH, Vector2 POS, Vector2 DIMS) : base(PATH, POS, DIMS) 
+       
+        public Unit(string PATH, Vector2 POS, Vector2 DIMS, int OWNERID) : base(PATH, POS, DIMS, OWNERID) 
         {
-            dead = false;
-            speed = 2.0f;
-
-            health = 1;
-            healthMax = health;
-
-            hitDist = 35.0f;
+            
         }
         public virtual void Update(Vector2 OFFSET, Player ENEMY)
         {
            
 
             base.Update(OFFSET);
-        }
-        public virtual void GetHit(float DAMAGE)
-        {
-            health -= DAMAGE;
-            if (health <= 0)
-            {
-                dead = true;
-            }
-            
         }
 
         public override void Draw(Vector2 OFFSET)

@@ -18,7 +18,7 @@ namespace TopDownShooter
     public class Imp : Mob
     {
        
-        public Imp(Vector2 POS) : base("2d\\Units\\Mobs\\Imp", POS, new Vector2(40, 40))
+        public Imp(Vector2 POS, int OWNERID) : base("2d\\Units\\Mobs\\Imp", POS, new Vector2(40, 40), OWNERID)
         {
 
             speed = 2.0f;
