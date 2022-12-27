@@ -35,19 +35,30 @@ namespace TopDownShooter
 
         public void Draw(World WORLD) 
         {
+            Globals.normalEffect.Parameters["xSize"].SetValue(1.0f);
+            Globals.normalEffect.Parameters["ySize"].SetValue(1.0f);
+            Globals.normalEffect.Parameters["xSize"].SetValue(1.0f);
+            Globals.normalEffect.Parameters["ySize"].SetValue(1.0f);
+            Globals.normalEffect.Parameters["filterColor"].SetValue(Color.White.ToVector4());
+            Globals.normalEffect.CurrentTechnique.Passes[0].Apply();
+
+
+
             string tempStr = "Score " + GameGlobals.score;
             Vector2 strDims = font.MeasureString(tempStr);
             Globals.spriteBatch.DrawString(font, tempStr, new Vector2(Globals.screenWidth/2 - strDims.X/2, Globals.screenHeight - 40) , Color.Black);
-
-            healthBar.Draw(new Vector2(20, Globals.screenHeight - 20));
-
 
             if (WORLD.user.hero.dead || WORLD.user.buildings.Count <= 0)
             {
                 tempStr = "Press Enter to Restart!";
                 strDims = font.MeasureString(tempStr);
-                Globals.spriteBatch.DrawString(font, tempStr, new Vector2(Globals.screenWidth / 2 - strDims.X / 2, Globals.screenHeight/2), Color.Black);
+                Globals.spriteBatch.DrawString(font, tempStr, new Vector2(Globals.screenWidth / 2 - strDims.X / 2, Globals.screenHeight / 2), Color.Black);
             }
+
+            healthBar.Draw(new Vector2(20, Globals.screenHeight - 20));
+
+
+          
         }
     }
 }

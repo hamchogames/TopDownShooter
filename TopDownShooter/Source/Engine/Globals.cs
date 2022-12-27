@@ -31,6 +31,8 @@ namespace TopDownShooter
         public static ContentManager content;
         public static SpriteBatch spriteBatch;
 
+        public static Effect normalEffect;
+
 
         public static McKeyboard keyboard;
         public static McMouseControl mouse;
