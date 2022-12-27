@@ -11,41 +11,30 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
-using TopDownShooterPrompt;
 #endregion
 
 
 namespace TopDownShooter
 {
-    public class SpawnPoint : AttackableObject
+    public class Tower : Building
     {
 
-        public McTimer spawnTimer = new McTimer(2400); // spawning time
-        public SpawnPoint(string PATH, Vector2 POS, Vector2 DIMS, int OWNERID) : base(PATH, POS, DIMS, OWNERID)
+       
+        public Tower(Vector2 POS, int OWNERID) 
+            : base("2d//Buildings//Tower", POS, new Vector2(45, 45), OWNERID) 
         {
-            dead = false;
-            health = 3;
+            health = 20;
             healthMax = health;
 
             hitDist = 35.0f;
         }
-        public override void Update(Vector2 OFFSET)
+        public virtual void Update(Vector2 OFFSET, Player ENEMY)
         {
-            spawnTimer.UpdateTimer();
-            if(spawnTimer.Test())
-            {
-                SpawnMob();
-                spawnTimer.ResetToZero();
-            }
+           
 
             base.Update(OFFSET);
         }
 
-
-        public virtual void SpawnMob()
-        {
-            GameGlobals.PassMob(new Imp(new Vector2(pos.X, pos.Y), ownerId));
-        }
         public override void Draw(Vector2 OFFSET)
         {
             base.Draw(OFFSET);

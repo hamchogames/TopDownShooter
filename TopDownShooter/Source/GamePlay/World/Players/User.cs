@@ -23,6 +23,9 @@ namespace TopDownShooter
         {
             hero = new Hero("2d\\Hero", new Vector2(500, 500), new Vector2(48, 48),id);
 
+            buildings.Add(new Tower(new Vector2(Globals.screenWidth/2, Globals.screenHeight/2 - 40), id));
+
+
         }
         public override void Update(Player ENEMY, Vector2 OFFSET)
         {
