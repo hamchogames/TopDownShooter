@@ -35,12 +35,12 @@ namespace TopDownShooter
 
         public void Draw(World WORLD) 
         {
-            Globals.normalEffect.Parameters["xSize"].SetValue(1.0f);
+           /* Globals.normalEffect.Parameters["xSize"].SetValue(1.0f);
             Globals.normalEffect.Parameters["ySize"].SetValue(1.0f);
             Globals.normalEffect.Parameters["xSize"].SetValue(1.0f);
             Globals.normalEffect.Parameters["ySize"].SetValue(1.0f);
             Globals.normalEffect.Parameters["filterColor"].SetValue(Color.White.ToVector4());
-            Globals.normalEffect.CurrentTechnique.Passes[0].Apply();
+            Globals.normalEffect.CurrentTechnique.Passes[0].Apply();*/
 
 
 

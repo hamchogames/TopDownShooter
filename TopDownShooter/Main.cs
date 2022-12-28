@@ -57,7 +57,7 @@ namespace TopDownShooter
 
             cursor = new Basic2d("2d\\Misc\\CursorArrow", new Vector2(0, 0), new Vector2(28,28));
 
-            Globals.normalEffect = Globals.content.Load<Effect>("Effects\\Normal");
+           // Globals.normalEffect = Globals.content.Load<Effect>("Effects\\Normal");
 
             Globals.keyboard = new McKeyboard();
             Globals.mouse = new McMouseControl();
@@ -92,7 +92,7 @@ namespace TopDownShooter
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
-            Globals.spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend);
+            Globals.spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend);
 
 
 
