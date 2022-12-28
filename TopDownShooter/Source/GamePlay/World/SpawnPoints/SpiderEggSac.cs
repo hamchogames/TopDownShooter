@@ -26,7 +26,7 @@ namespace TopDownShooter
         {
             totalSpawns = 0;
             maxSpawns = 3;
-            Debug.WriteLine("Spawn Spiderling 1");
+           
 
 
             health = 3;
@@ -44,7 +44,6 @@ namespace TopDownShooter
         public override void SpawnMob()
         {
 
-            Debug.WriteLine("SpawnMob");
             Mob tempMob = new Spiderling(new Vector2(pos.X, pos.Y), ownerId);
 
             if (tempMob != null)

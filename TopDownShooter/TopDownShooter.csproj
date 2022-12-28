@@ -36,6 +36,7 @@
     <None Remove="Content\Fonts\Lindsey17.xnb" />
     <None Remove="Content\Fonts\Lindsey18.xnb" />
     <None Remove="Content\Fonts\Lindsey20.xnb" />
+    <None Remove="XML\Levels\Level1.xml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\2d\Hero.xnb">
@@ -108,6 +109,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Fonts\Lindsey20.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="XML\Levels\Level1.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

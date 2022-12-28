@@ -20,7 +20,7 @@ namespace TopDownShooter
      
         public Hero(string PATH, Vector2 POS, Vector2 DIMS, int OWNERID) : base(PATH, POS, DIMS, OWNERID)
         {
-
+            Debug.WriteLine("Hero");
             speed = 2.0f;
 
             health = 5;

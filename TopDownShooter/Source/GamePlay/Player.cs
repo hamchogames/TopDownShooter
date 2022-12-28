@@ -13,6 +13,8 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using System.Security.Cryptography.X509Certificates;
 using SharpDX.MediaFoundation;
+using System.ComponentModel;
+using System.Diagnostics;
 #endregion
 
 namespace TopDownShooter
@@ -26,10 +28,10 @@ namespace TopDownShooter
         public List<SpawnPoint> spawnPoints = new List<SpawnPoint>();
         public List<Building> buildings = new List<Building>();
 
-        public Player(int ID) 
+        public Player(int ID, XElement DATA) 
         {
             id = ID;
-        
+            LoadData(DATA);
         }
         public virtual void Update(Player ENEMY, Vector2 OFFSET)
         {
@@ -106,6 +108,34 @@ namespace TopDownShooter
             tempObjects.AddRange(buildings.ToList<AttackableObject>());
             
             return tempObjects;
+        }
+
+        public virtual void LoadData(XElement DATA)
+        {
+            List<XElement> spawnList = (from t in DATA.Descendants("SpawnPoint")
+                                        select t).ToList<XElement>();
+            
+            for (int i=0; i<spawnList.Count; i++)
+            {
+                
+                spawnPoints.Add(new Portal(new Vector2(Convert.ToInt32(spawnList[i].Element("Pos").Element("x").Value, Globals.culture), Convert.ToInt32(spawnList[i].Element("Pos").Element("y").Value, Globals.culture)), id));
+                spawnPoints[spawnPoints.Count - 1].spawnTimer.AddToTimer(Convert.ToInt32(spawnList[i].Element("timerAdd").Value, Globals.culture));
+                Debug.WriteLine(i);
+            }
+
+            List<XElement> buildingList = (from t in DATA.Descendants("Building")
+                                        select t).ToList<XElement>();
+
+            for (int i = 0; i < buildingList.Count; i++)
+            {
+                buildings.Add(new Tower(new Vector2(Convert.ToInt32(buildingList[i].Element("Pos").Element("x").Value, Globals.culture), Convert.ToInt32(buildingList[i].Element("Pos").Element("y").Value, Globals.culture)), id));
+            }
+
+            if(DATA.Element("Hero") != null)
+            {
+                hero = new Hero("2d\\Hero", new Vector2(Convert.ToInt32(DATA.Element("Hero").Element("Pos").Element("x").Value, Globals.culture), Convert.ToInt32(DATA.Element("Hero").Element("Pos").Element("y").Value, Globals.culture)), new Vector2(48, 48), id);
+            }
+
         }
 
 
