@@ -20,25 +20,48 @@ namespace TopDownShooter
     public class SpawnPoint : AttackableObject
     {
 
+        public List<MobChoice> mobChoices = new List<MobChoice>();
+
         public McTimer spawnTimer = new McTimer(2400); // spawning time
-        public SpawnPoint(string PATH, Vector2 POS, Vector2 DIMS, int OWNERID) : base(PATH, POS, DIMS, OWNERID)
+        public SpawnPoint(string PATH, Vector2 POS, Vector2 DIMS, int OWNERID, XElement DATA) : base(PATH, POS, DIMS, OWNERID)
         {
             dead = false;
             health = 3;
             healthMax = health;
+
+            LoadData(DATA);
 
             hitDist = 35.0f;
         }
         public override void Update(Vector2 OFFSET)
         {
             spawnTimer.UpdateTimer();
-            if(spawnTimer.Test())
+            if (spawnTimer.Test())
             {
                 SpawnMob();
                 spawnTimer.ResetToZero();
             }
 
             base.Update(OFFSET);
+        }
+
+        public virtual void LoadData(XElement DATA)
+        {
+            if(DATA != null)
+            {
+                spawnTimer.AddToTimer(Convert.ToInt32(DATA.Element("timerAdd").Value, Globals.culture));
+
+                List<XElement> mobList = (from t in DATA.Descendants("mob")
+                                            select t).ToList<XElement>();
+
+
+                for (int i = 0; i < mobList.Count; i++)
+                {
+                    mobChoices.Add(new MobChoice(mobList[i].Value, Convert.ToInt32(mobList[i].Attribute("rate").Value, Globals.culture)));
+              
+
+                }
+            }
         }
 
 

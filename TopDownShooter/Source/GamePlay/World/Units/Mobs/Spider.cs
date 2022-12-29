@@ -47,7 +47,7 @@ namespace TopDownShooter
         public virtual void SpawnEggSac()
         {
             Debug.WriteLine("void SpawnEggSac start");
-            GameGlobals.PassSpawnPoint(new SpiderEggSac(new Vector2(pos.X, pos.Y), ownerId));
+            GameGlobals.PassSpawnPoint(new SpiderEggSac(new Vector2(pos.X, pos.Y), ownerId, null));
             Debug.WriteLine("void SpawnEggSac end");
         }
 
