@@ -18,11 +18,16 @@ namespace TopDownShooter
     public class UI
     {
 
+        public Basic2d pauseOverlay;
+
         public SpriteFont font;
 
         public QuantityDisplayBar healthBar;
         public UI() 
         {
+
+            pauseOverlay = new Basic2d("2d\\Misc\\PauseOverlay", new Vector2(Globals.screenWidth / 2, Globals.screenHeight / 2), new Vector2(300, 300));
+
             font = Globals.content.Load<SpriteFont>("Fonts//Arial16");
 
             healthBar = new QuantityDisplayBar(new Vector2(104,16),2,Color.Red);
@@ -58,7 +63,10 @@ namespace TopDownShooter
             healthBar.Draw(new Vector2(20, Globals.screenHeight - 20));
 
 
-          
+            if (GameGlobals.paused)
+            {
+                pauseOverlay.Draw(Vector2.Zero);
+            }
         }
     }
 }

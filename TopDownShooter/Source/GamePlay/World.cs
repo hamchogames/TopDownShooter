@@ -48,6 +48,7 @@ namespace TopDownShooter
             GameGlobals.CheckScroll = CheckScroll;
             GameGlobals.PassSpawnPoint= AddSpawnPoint;
 
+            GameGlobals.paused = false;
 
 
             offset = new Vector2(0, 0);
@@ -58,7 +59,7 @@ namespace TopDownShooter
         }
         public virtual void Update()
         {
-            if (!user.hero.dead && user.buildings.Count > 0)
+            if (!user.hero.dead && user.buildings.Count > 0 && !GameGlobals.paused )
             {
 
                 allObjects.Clear();
@@ -90,6 +91,12 @@ namespace TopDownShooter
                     ResetWorld(null);
                 }
             }
+
+            if (Globals.keyboard.GetSinglePress("Space"))
+            {
+                GameGlobals.paused = !GameGlobals.paused;
+            }
+
             ui.Update(this);
 
         
