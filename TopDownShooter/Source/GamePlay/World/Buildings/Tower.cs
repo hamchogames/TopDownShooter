@@ -24,14 +24,14 @@ namespace TopDownShooter
         public Tower(Vector2 POS, int OWNERID) 
             : base("2d//Buildings//Tower", POS, new Vector2(45, 45), OWNERID)
         {
-            Debug.WriteLine("Tower");
+            
             health = 20;
             healthMax = health;
 
             hitDist = 35.0f;
            
         }
-        public virtual void Update(Vector2 OFFSET, Player ENEMY)
+        public override void Update(Vector2 OFFSET, Player ENEMY)
         {
            
 

@@ -13,16 +13,19 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using System.Security.Cryptography.X509Certificates;
 using SharpDX.Direct2D1.Effects;
+using TopDownShooterPrompt;
 #endregion
 
 namespace TopDownShooter
 {
-    public class Fireball : Projectile2d
+    public class Arrow : Projectile2d
     {
 
-        public Fireball(Vector2 POS, AttackableObject OWNER, Vector2 TARGET) : base("2d\\Projectiles\\Fireball", POS, new Vector2(20, 20), OWNER, TARGET)
+        public Arrow(Vector2 POS, AttackableObject OWNER, Vector2 TARGET) : base("2d\\Projectiles\\Arrow", POS, new Vector2(8, 20), OWNER, TARGET)
         {
-  
+            speed = 10.0f;
+
+            timer = new McTimer(800);
         }
 
         public override void Update(Vector2 OFFSET, List<AttackableObject> UNITS)

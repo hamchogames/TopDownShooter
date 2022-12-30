@@ -44,6 +44,7 @@ namespace TopDownShooter
 
             GameGlobals.PassProjectile = AddProjectile;
             GameGlobals.PassMob = AddMob;
+            GameGlobals.PassBuilding = AddBuilding;
             GameGlobals.CheckScroll = CheckScroll;
             GameGlobals.PassSpawnPoint= AddSpawnPoint;
 
@@ -94,6 +95,22 @@ namespace TopDownShooter
         
         }
 
+        public virtual void AddBuilding(object INFO)
+        {
+            Building tempBuilding = (Building)INFO;
+
+            if (user.id == tempBuilding.ownerId)
+            {
+                user.AddBuilding(tempBuilding);
+            }
+            else if (aIPlayer.id == tempBuilding.ownerId)
+            {
+                aIPlayer.AddBuilding(tempBuilding);
+            }
+            //aIPlayer.AddBuilding((Mob)INFO);
+        }
+
+
         public virtual void AddMob(object INFO)
         {
             Unit tempUnit = (Unit)INFO;
@@ -106,7 +123,7 @@ namespace TopDownShooter
             {
                 aIPlayer.AddUnit(tempUnit);
             }
-            aIPlayer.AddUnit((Mob)INFO);
+          //  aIPlayer.AddUnit((Mob)INFO);
         }
         public virtual void AddProjectile(object INFO)
         {

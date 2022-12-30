@@ -55,6 +55,11 @@ namespace TopDownShooter
                 checkScoll= true;
             }
 
+            if (Globals.keyboard.GetSinglePress("D1"))
+            {
+                GameGlobals.PassBuilding(new ArrowTower(new Vector2(pos.X, pos.Y - 30), ownerId));
+            }
+
             rot = Globals.RotateTowards(pos, new Vector2(Globals.mouse.newMousePos.X, Globals.mouse.newMousePos.Y) - OFFSET);
 
             if (Globals.mouse.LeftClick())

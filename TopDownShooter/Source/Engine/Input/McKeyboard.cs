@@ -77,5 +77,28 @@ namespace TopDownShooter
             }
         }
 
+        public bool GetSinglePress(string KEY)
+        {
+            for(int i=0;i<pressedKeys.Count;i++)
+            {
+                bool isIN = false;
+                for(int j=0;previousPressedKeys.Count>j;j++)
+                {
+                    if (pressedKeys[i].key == previousPressedKeys[j].key) 
+                    { 
+                        isIN = true;
+                        break;
+                    }
+
+                }
+                if (!isIN && (pressedKeys[i].key == KEY || pressedKeys[i].print == KEY))
+                    {
+                    return true;
+                }
+
+            }
+            return false;
+        }
+
     }
 }
