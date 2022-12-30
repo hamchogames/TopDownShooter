@@ -82,7 +82,7 @@ namespace TopDownShooter
 
         public override void Draw(Vector2 OFFSET)
         {
-           /* Globals.normalEffect.Parameters["xSize"].SetValue((float)myModel.Bounds.Width);
+           /*Globals.normalEffect.Parameters["xSize"].SetValue((float)myModel.Bounds.Width);
             Globals.normalEffect.Parameters["ySize"].SetValue((float)myModel.Bounds.Height);
             Globals.normalEffect.Parameters["xSize"].SetValue((float)(int)dims.X);
             Globals.normalEffect.Parameters["ySize"].SetValue((float)(int)dims.Y);

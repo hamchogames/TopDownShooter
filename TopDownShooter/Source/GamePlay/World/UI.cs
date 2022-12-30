@@ -35,7 +35,7 @@ namespace TopDownShooter
 
         public void Draw(World WORLD) 
         {
-           /* Globals.normalEffect.Parameters["xSize"].SetValue(1.0f);
+            /*Globals.normalEffect.Parameters["xSize"].SetValue(1.0f);
             Globals.normalEffect.Parameters["ySize"].SetValue(1.0f);
             Globals.normalEffect.Parameters["xSize"].SetValue(1.0f);
             Globals.normalEffect.Parameters["ySize"].SetValue(1.0f);
