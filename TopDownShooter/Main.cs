@@ -57,7 +57,7 @@ namespace TopDownShooter
 
             cursor = new Basic2d("2d\\Misc\\CursorArrow", new Vector2(0, 0), new Vector2(28,28));
 
-           //Globals.normalEffect = Globals.content.Load<Effect>("Effects\\Normal");
+           Globals.normalEffect = Globals.content.Load<Effect>("Effects\\Normal");
 
             Globals.keyboard = new McKeyboard();
             Globals.mouse = new McMouseControl();
@@ -92,16 +92,19 @@ namespace TopDownShooter
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
-            Globals.spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend);
-
-
-
+            Globals.spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.AlphaBlend);
 
             gamePlay.Draw();
 
-
-
+            Globals.normalEffect.Parameters["xSize"].SetValue((float)cursor.myModel.Bounds.Width);
+            Globals.normalEffect.Parameters["ySize"].SetValue((float)cursor.myModel.Bounds.Height);
+            Globals.normalEffect.Parameters["xDraw"].SetValue((float)((int)cursor.dims.X));
+            Globals.normalEffect.Parameters["yDraw"].SetValue((float)((int)cursor.dims.Y));
+            Globals.normalEffect.Parameters["filterColor"].SetValue(Color.White.ToVector4());
+            Globals.normalEffect.CurrentTechnique.Passes[0].Apply();
             cursor.Draw(new Vector2(Globals.mouse.newMousePos.X, Globals.mouse.newMousePos.Y), new Vector2(0, 0), Color.White);
+           
+
             Globals.spriteBatch.End();
 
             base.Draw(gameTime);

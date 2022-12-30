@@ -18,6 +18,7 @@
     <None Remove="Content\2d\Misc\CursorArrow.xnb" />
     <None Remove="Content\2d\Misc\PauseOverlay.xnb" />
     <None Remove="Content\2d\Misc\shade.xnb" />
+    <None Remove="Content\2d\Misc\SimpleBtn.xnb" />
     <None Remove="Content\2d\Misc\solid.xnb" />
     <None Remove="Content\2d\Projectiles\AcidBall.xnb" />
     <None Remove="Content\2d\Projectiles\Arrow.xnb" />
@@ -30,6 +31,7 @@
     <None Remove="Content\2d\Units\Mobs\ImpBlue.xnb" />
     <None Remove="Content\2d\Units\Mobs\Spider.xnb" />
     <None Remove="Content\Effects\Normal.xnb" />
+    <None Remove="Content\Effects\NormalFlat.fx" />
     <None Remove="Content\Fonts\Arial16.xnb" />
     <None Remove="Content\Fonts\Arial20Bold.xnb" />
     <None Remove="Content\Fonts\Arial24.xnb" />
@@ -58,6 +60,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\2d\Misc\shade.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\2d\Misc\SimpleBtn.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\2d\Misc\solid.xnb">
@@ -94,6 +99,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Effects\Normal.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Effects\NormalFlat.fx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Fonts\Arial16.xnb">
