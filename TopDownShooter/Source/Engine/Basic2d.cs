@@ -55,7 +55,7 @@ namespace TopDownShooter
 
             return false;
         }
-
+        //Test 
         public virtual void Draw(Vector2 OFFSET)
         {
             if (myModel != null)
