@@ -23,8 +23,8 @@ namespace TopDownShooter
         int range;
         McTimer shotTimer = new McTimer(1200);
        
-        public ArrowTower(Vector2 POS, int OWNERID) 
-            : base("2d//Buildings//ArrowTower", POS, new Vector2(45, 45), OWNERID)
+        public ArrowTower(Vector2 POS, Vector2 FRAMES, int OWNERID) 
+            : base("2d//Buildings//ArrowTower", POS, new Vector2(45, 45), FRAMES, OWNERID)
         {
 
             range = 220;

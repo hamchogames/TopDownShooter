@@ -12,6 +12,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using System.Diagnostics;
+using SharpDX.Direct3D9;
 #endregion
 
 
@@ -21,8 +22,8 @@ namespace TopDownShooter
     {
 
        
-        public Tower(Vector2 POS, int OWNERID) 
-            : base("2d//Buildings//Tower", POS, new Vector2(45, 45), OWNERID)
+        public Tower(Vector2 POS, Vector2 FRAMES, int OWNERID) 
+            : base("2d//Buildings//Tower", POS, new Vector2(45, 45), FRAMES, OWNERID)
         {
             
             health = 20;

@@ -19,8 +19,8 @@ namespace TopDownShooter
     public class Spider : Mob
     {
         public McTimer spawnTimer;
-        public Spider(Vector2 POS, int OWNERID) 
-            : base("2d\\Units\\Mobs\\Spider", POS, new Vector2(45, 45), OWNERID)
+        public Spider(Vector2 POS,Vector2 FRAMES, int OWNERID) 
+            : base("2d\\Units\\Mobs\\Spider", POS, new Vector2(45, 45),FRAMES, OWNERID)
         {
 
             speed = 1.5f;
@@ -46,9 +46,9 @@ namespace TopDownShooter
 
         public virtual void SpawnEggSac()
         {
-            Debug.WriteLine("void SpawnEggSac start");
-            GameGlobals.PassSpawnPoint(new SpiderEggSac(new Vector2(pos.X, pos.Y), ownerId, null));
-            Debug.WriteLine("void SpawnEggSac end");
+            
+            GameGlobals.PassSpawnPoint(new SpiderEggSac(new Vector2(pos.X, pos.Y), new Vector2(1, 1), ownerId, null));
+            
         }
 
         public override void Draw(Vector2 OFFSET)

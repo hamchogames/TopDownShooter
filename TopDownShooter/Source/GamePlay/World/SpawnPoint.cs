@@ -23,7 +23,7 @@ namespace TopDownShooter
         public List<MobChoice> mobChoices = new List<MobChoice>();
 
         public McTimer spawnTimer = new McTimer(2400); // spawning time
-        public SpawnPoint(string PATH, Vector2 POS, Vector2 DIMS, int OWNERID, XElement DATA) : base(PATH, POS, DIMS, OWNERID)
+        public SpawnPoint(string PATH, Vector2 POS, Vector2 DIMS, Vector2 FRAMES, int OWNERID, XElement DATA) : base(PATH, POS, DIMS, FRAMES, OWNERID)
         {
             dead = false;
             health = 3;
@@ -67,7 +67,7 @@ namespace TopDownShooter
 
         public virtual void SpawnMob()
         {
-            GameGlobals.PassMob(new Imp(new Vector2(pos.X, pos.Y), ownerId));
+            GameGlobals.PassMob(new Imp(new Vector2(pos.X, pos.Y),new Vector2(1,1), ownerId));
         }
         public override void Draw(Vector2 OFFSET)
         {
