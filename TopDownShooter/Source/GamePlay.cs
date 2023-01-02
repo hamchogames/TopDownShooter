@@ -20,10 +20,13 @@ namespace TopDownShooter
     {
         int playState;
         World world;
-        public GamePlay()
+
+        PassObject ChangeGameState;
+        public GamePlay(PassObject CHANGEGAMESTATE)
         {
             playState= 0;
 
+            ChangeGameState = CHANGEGAMESTATE;
             ResetWorld(null);
 
         }
@@ -37,7 +40,7 @@ namespace TopDownShooter
 
         public virtual void ResetWorld(object INFO)
         {
-            world = new World(ResetWorld);
+            world = new World(ResetWorld, ChangeGameState);
         }
         public virtual void Draw()
         {

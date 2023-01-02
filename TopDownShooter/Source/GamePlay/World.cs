@@ -34,14 +34,14 @@ namespace TopDownShooter
         
       
 
-        PassObject ResetWorld;
+        PassObject ResetWorld, ChangeGameState;
+        
 
 
-
-        public World(PassObject RESETWORLD) 
+        public World(PassObject RESETWORLD, PassObject CHANGEGAMESTATE) 
         {
             ResetWorld = RESETWORLD;
-
+            ChangeGameState = CHANGEGAMESTATE;
             GameGlobals.PassProjectile = AddProjectile;
             GameGlobals.PassMob = AddMob;
             GameGlobals.PassBuilding = AddBuilding;
@@ -90,6 +90,12 @@ namespace TopDownShooter
                 {
                     ResetWorld(null);
                 }
+            }
+
+            if (Globals.keyboard.GetSinglePress("Back"))
+            {
+                ResetWorld(null);
+                ChangeGameState(0);
             }
 
             if (Globals.keyboard.GetSinglePress("Space"))
