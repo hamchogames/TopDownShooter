@@ -70,8 +70,8 @@ namespace TopDownShooter
                 allObjects.AddRange(user.GetAllObjects());
                 allObjects.AddRange(aIPlayer.GetAllObjects());
 
-                user.Update(aIPlayer, offset);
-                aIPlayer.Update(user, offset);
+                user.Update(aIPlayer, offset, grid);
+                aIPlayer.Update(user, offset, grid);
                 
 
                 

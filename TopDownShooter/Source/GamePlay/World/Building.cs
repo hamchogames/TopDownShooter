@@ -25,11 +25,11 @@ namespace TopDownShooter
         {
             
         }
-        public virtual void Update(Vector2 OFFSET, Player ENEMY)
+        public virtual void Update(Vector2 OFFSET, Player ENEMY, SquareGrid GRID)
         {
            
 
-            base.Update(OFFSET);
+            base.Update(OFFSET, ENEMY, GRID);
         }
 
         public override void Draw(Vector2 OFFSET)

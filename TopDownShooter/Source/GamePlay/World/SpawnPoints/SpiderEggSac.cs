@@ -33,11 +33,11 @@ namespace TopDownShooter
             healthMax = health;
             spawnTimer = new McTimer(3000);
         }
-        public override void Update(Vector2 OFFSET)
+        public override void Update(Vector2 OFFSET, Player ENEMY, SquareGrid GRID)
         {
            
 
-            base.Update(OFFSET);
+            base.Update(OFFSET, ENEMY, GRID);
         }
         
 

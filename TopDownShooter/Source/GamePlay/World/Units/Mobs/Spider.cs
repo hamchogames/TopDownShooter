@@ -31,7 +31,7 @@ namespace TopDownShooter
             spawnTimer.AddToTimer(4000);
 
         }
-        public override void Update(Vector2 OFFSET, Player ENEMY)
+        public override void Update(Vector2 OFFSET, Player ENEMY, SquareGrid GRID)
         {
             spawnTimer.UpdateTimer();
             if (spawnTimer.Test())
@@ -41,7 +41,7 @@ namespace TopDownShooter
                 spawnTimer.ResetToZero();
             }
 
-            base.Update(OFFSET, ENEMY);
+            base.Update(OFFSET, ENEMY, GRID);
         }
 
         public virtual void SpawnEggSac()
