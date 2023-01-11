@@ -1,8 +1,13 @@
 ﻿#region Includes
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
+using System.Xml.Linq;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Text;
+using System.IO;
+using System.Xml;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
@@ -17,10 +22,12 @@ namespace TopDownShooter
 {
     public class Mob : Unit
     {
+        public bool currentlyPathing;
+
         public McTimer rePathTimer = new McTimer(200);
         public Mob(string PATH, Vector2 POS, Vector2 DIMS, Vector2 FRAMES, int OWNERID) : base(PATH, POS, DIMS, FRAMES, OWNERID)
         {
-
+            currentlyPathing = false;
             speed = 2.0f;
 
         }
@@ -37,11 +44,21 @@ namespace TopDownShooter
 
             if (pathNodes == null || (pathNodes.Count == 0 && pos.X == moveTo.X && pos.Y == moveTo.Y) || rePathTimer.Test())
             {
-                pathNodes = FindPath(GRID, GRID.GetSlotFromPixel(ENEMY.hero.pos, Vector2.Zero));
-                moveTo = pathNodes[0];
-                pathNodes.RemoveAt(0);
+                if (!currentlyPathing)
+                {
+                    Task repathTask = new Task(() =>
+                    { 
+                        currentlyPathing = true;
+                    pathNodes = FindPath(GRID, GRID.GetSlotFromPixel(ENEMY.hero.pos, Vector2.Zero));
+                    moveTo = pathNodes[0];
+                    pathNodes.RemoveAt(0);
 
-                rePathTimer.ResetToZero();
+                    rePathTimer.ResetToZero();
+
+                    currentlyPathing = false;
+                });
+                repathTask.Start();
+                }
             }
             else
             {
