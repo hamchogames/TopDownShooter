@@ -21,7 +21,7 @@ namespace TopDownShooter
     public class ArrowTower : Building
     {
         int range;
-        McTimer shotTimer = new McTimer(1200);
+        McTimer shotTimer = new McTimer(12000);
        
         public ArrowTower(Vector2 POS, Vector2 FRAMES, int OWNERID) 
             : base("2d//Buildings//ArrowTower", POS, new Vector2(45, 45), FRAMES, OWNERID)

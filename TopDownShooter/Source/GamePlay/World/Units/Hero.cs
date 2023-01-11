@@ -10,6 +10,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Input.Touch;
 using Microsoft.Xna.Framework.Media;
+using TopDownShooterPrompt;
 #endregion
 
 
@@ -65,7 +66,7 @@ namespace TopDownShooter
                 Vector2 tempLoc = GRID.GetSlotFromPixel(new Vector2(pos.X, pos.Y - 30), Vector2.Zero);
                 GridLocation loc = GRID.GetSlotFromLocation(tempLoc);
 
-                if (loc != null && !loc.filled && !loc.impassible)
+                if (loc != null && !loc.filled && !loc.impassable)
                 {
                     loc.SetToFilled(false);
                     Building tempBuilding = new ArrowTower(new Vector2(pos.X, pos.Y - 30), new Vector2(1, 1), ownerId);

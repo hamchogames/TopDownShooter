@@ -10,6 +10,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Input.Touch;
 using Microsoft.Xna.Framework.Media;
+using TopDownShooterPrompt;
 #endregion
 
 
@@ -26,11 +27,11 @@ namespace TopDownShooter
         }
         public override void Update(Vector2 OFFSET, Player ENEMY, SquareGrid GRID)
         {
-            AI(ENEMY);
+            AI(ENEMY, GRID);
 
             base.Update(OFFSET, ENEMY, GRID);
         }
-        public virtual void AI(Player ENEMY)
+        public virtual void AI(Player ENEMY, SquareGrid GRID)
         {
             pos += Globals.RadialMovement(ENEMY.hero.pos, pos, speed);
             rot = Globals.RotateTowards(pos, ENEMY.hero.pos);
