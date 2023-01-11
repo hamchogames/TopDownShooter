@@ -13,7 +13,6 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using System.Security.Cryptography.X509Certificates;
 using SharpDX.Direct2D1.Effects;
-using TopDownShooterPrompt;
 #endregion
 
 namespace TopDownShooter

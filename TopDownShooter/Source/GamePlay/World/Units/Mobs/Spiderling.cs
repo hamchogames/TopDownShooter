@@ -11,7 +11,6 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Input.Touch;
 using Microsoft.Xna.Framework.Media;
 using SharpDX.Direct2D1;
-using TopDownShooterPrompt;
 #endregion
 
 

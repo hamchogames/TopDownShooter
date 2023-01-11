@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework;
 using TopDownShooter;
 #endregion
-namespace TopDownShooterPrompt
+namespace TopDownShooter
 {
     public class McTimer
     {
