@@ -23,9 +23,12 @@ namespace TopDownShooter
     public class Unit : AttackableObject
     {
 
+        public Skill currentSkill;
+
         protected Vector2 moveTo;
 
         protected List<Vector2> pathNodes = new List<Vector2>();
+        public List<Skill> skills = new List<Skill>();
         public Unit(string PATH, Vector2 POS, Vector2 DIMS, Vector2 FRAMES, int OWNERID) 
             : base(PATH, POS, DIMS, FRAMES, OWNERID) 
         {

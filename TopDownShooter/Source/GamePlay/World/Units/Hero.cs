@@ -31,6 +31,8 @@ namespace TopDownShooter
             frameAnimationList.Add(new FrameAnimation(new Vector2(frameSize.X, frameSize.Y), frames, new Vector2(0, 0), 4, 133, 0, "Walk"));
                 frameAnimationList.Add(new FrameAnimation(new Vector2(frameSize.X, frameSize.Y), frames, new Vector2(0, 0), 1, 133, 0, "Stand"));
 
+            skills.Add(new FlameWave());
+
         }
         public override void Update(Vector2 OFFSET, Player ENEMY, SquareGrid GRID)
         {
@@ -60,7 +62,7 @@ namespace TopDownShooter
                 checkScoll= true;
             }
 
-            if (Globals.keyboard.GetSinglePress("D1"))
+            if (Globals.keyboard.GetSinglePress("T"))
             {
                 Vector2 tempLoc = GRID.GetSlotFromPixel(new Vector2(pos.X, pos.Y - 30), Vector2.Zero);
                 GridLocation loc = GRID.GetSlotFromLocation(tempLoc);
@@ -76,14 +78,13 @@ namespace TopDownShooter
               
             }
 
-            rot = Globals.RotateTowards(pos, new Vector2(Globals.mouse.newMousePos.X, Globals.mouse.newMousePos.Y) - OFFSET);
-
-            if (Globals.mouse.LeftClick())
+            if (Globals.keyboard.GetSinglePress("D1"))
             {
-                
-                GameGlobals.PassProjectile(new Fireball(new Vector2(pos.X, pos.Y), this, new Vector2(Globals.mouse.newMousePos.X, Globals.mouse.newMousePos.Y) - OFFSET));
-                
+                currentSkill = skills[0];
+                currentSkill.Active = true;
+               
             }
+
             if (checkScoll)
             {
                 GameGlobals.CheckScroll(pos);
@@ -92,6 +93,36 @@ namespace TopDownShooter
             else
             {
                 SetAnimationByName("Stand");
+            }
+
+            rot = Globals.RotateTowards(pos, new Vector2(Globals.mouse.newMousePos.X, Globals.mouse.newMousePos.Y) - OFFSET);
+
+
+
+            if (currentSkill == null) {
+                if (Globals.mouse.LeftClick())
+                {
+
+                    GameGlobals.PassProjectile(new Fireball(new Vector2(pos.X, pos.Y), this, new Vector2(Globals.mouse.newMousePos.X, Globals.mouse.newMousePos.Y) - OFFSET));
+
+                }
+                
+            }
+            else
+            {
+                currentSkill.Update(OFFSET, ENEMY);
+
+                if (currentSkill.done)
+                {
+                    currentSkill.Reset();
+                    currentSkill = null;
+                }
+            }
+
+            if (Globals.mouse.RightClick())
+            {
+                currentSkill.Reset();
+                currentSkill = null;
             }
 
             base.Update(OFFSET, ENEMY, GRID);

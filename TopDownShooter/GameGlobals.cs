@@ -18,6 +18,6 @@ namespace TopDownShooter
     {
         public static bool paused = false;
         public static int score = 0;
-        public static PassObject PassProjectile, PassMob, PassBuilding, PassSpawnPoint, CheckScroll;
+        public static PassObject PassProjectile, PassEffect, PassMob, PassBuilding, PassSpawnPoint, CheckScroll;
     }
 }

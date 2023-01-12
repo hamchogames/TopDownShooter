@@ -32,6 +32,7 @@ namespace TopDownShooter
         public SquareGrid grid;
 
         public List<Projectile2d> projectiles = new List<Projectile2d>();
+        public List<Effect2d> effects = new List<Effect2d>();
         public List<AttackableObject> allObjects = new List<AttackableObject>();
         
       
@@ -45,6 +46,7 @@ namespace TopDownShooter
             ResetWorld = RESETWORLD;
             ChangeGameState = CHANGEGAMESTATE;
             GameGlobals.PassProjectile = AddProjectile;
+            GameGlobals.PassEffect = AddEffect;
             GameGlobals.PassMob = AddMob;
             GameGlobals.PassBuilding = AddBuilding;
             GameGlobals.CheckScroll = CheckScroll;
@@ -86,7 +88,18 @@ namespace TopDownShooter
                         i--;
                     }
                 }
-               
+
+                for (int i = 0; i < effects.Count; i++)
+                {
+                    effects[i].Update(offset);
+
+                    if (effects[i].done)
+                    {
+                        effects.RemoveAt(i);
+                        i--;
+                    }
+                }
+
             }
             else
             {
@@ -137,6 +150,10 @@ namespace TopDownShooter
             //aIPlayer.AddBuilding((Mob)INFO);
         }
 
+        public virtual void AddEffect(object INFO)
+        {
+            effects.Add((Effect2d)INFO);
+        }
 
         public virtual void AddMob(object INFO)
         {
@@ -156,6 +173,8 @@ namespace TopDownShooter
         {
             projectiles.Add((Projectile2d)INFO);
         }
+
+
 
         public virtual void AddSpawnPoint(object INFO)
         {
@@ -227,6 +246,12 @@ namespace TopDownShooter
             for (int i = 0; i < projectiles.Count; i++)
             {
                 projectiles[i].Draw(offset);
+
+            }
+
+            for (int i = 0; i < effects.Count; i++)
+            {
+                effects[i].Draw(offset);
 
             }
 
