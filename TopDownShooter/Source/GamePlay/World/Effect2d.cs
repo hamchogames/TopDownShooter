@@ -23,7 +23,7 @@ namespace TopDownShooter
     public class Effect2d : Animated2d
     {
 
-        public bool done;
+        public bool done, noTimer;
 
         public McTimer timer;
 
@@ -32,12 +32,13 @@ namespace TopDownShooter
             : base(PATH, POS, DIMS, FRAMES, Color.White) 
         {
             done = false;
+            noTimer = false;
             timer = new McTimer(MSEC);
         }
         public virtual void Update(Vector2 OFFSET)
         {
             timer.UpdateTimer();
-            if (timer.Test())
+            if (timer.Test() && !noTimer)
             {
                 done = true;
             }

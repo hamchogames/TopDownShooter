@@ -31,7 +31,7 @@ namespace TopDownShooter
             frameAnimationList.Add(new FrameAnimation(new Vector2(frameSize.X, frameSize.Y), frames, new Vector2(0, 0), 4, 133, 0, "Walk"));
                 frameAnimationList.Add(new FrameAnimation(new Vector2(frameSize.X, frameSize.Y), frames, new Vector2(0, 0), 1, 133, 0, "Stand"));
 
-            skills.Add(new FlameWave());
+            skills.Add(new FlameWave(this));
 
         }
         public override void Update(Vector2 OFFSET, Player ENEMY, SquareGrid GRID)

@@ -47,7 +47,7 @@ namespace TopDownShooter
       
             public virtual void Update(Vector2 OFFSET, List<AttackableObject> UNITS)
         {
-            pos += direction * speed;
+            ChangePosition();
 
 
 
@@ -65,7 +65,11 @@ namespace TopDownShooter
             }
 
         }
-
+        
+        public virtual void ChangePosition()
+        {
+            pos += direction * speed;
+        }
 
         public virtual bool HitSomething(List<AttackableObject> UNITS)
         {

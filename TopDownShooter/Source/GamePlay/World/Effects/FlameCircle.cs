@@ -22,7 +22,7 @@ namespace TopDownShooter
     public class FlameCircle : Effect2d
     {
 
-        public FlameCircle(Vector2 POS, Vector2 DIMS) : base("2d\\Effects\\FireNova", POS, DIMS, new Vector2(1,1), 400)
+        public FlameCircle(Vector2 POS, Vector2 DIMS, int MSEC) : base("2d\\Effects\\FireNova", POS, DIMS, new Vector2(1,1), MSEC)
         {
 
         }

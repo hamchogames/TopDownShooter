@@ -24,15 +24,17 @@ namespace TopDownShooter
         protected bool active;
         public bool done;
 
-
+        public AttackableObject owner;
 
         public Effect2d targetEffect;
 
-        public Skill() 
+        public Skill(AttackableObject OWNER) 
         
         {
             active = false;
             done = false;
+
+            owner = OWNER;
 
             targetEffect = new TargetingCircle(new Vector2(0,0), new Vector2(150,150));
         }

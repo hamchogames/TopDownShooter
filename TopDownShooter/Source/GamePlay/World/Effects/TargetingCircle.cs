@@ -24,7 +24,7 @@ namespace TopDownShooter
 
         public TargetingCircle(Vector2 POS, Vector2 DIMS) : base("2d\\Effects\\TargetCircle", POS, DIMS, new Vector2(1,1), 400)
         {
-
+            noTimer= true;
         } 
     }
 }
