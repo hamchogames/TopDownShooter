@@ -30,6 +30,7 @@
     <None Remove="Content\2d\SpawnPoints\Portal.xnb" />
     <None Remove="Content\2d\SpawnPoints\Tower.xnb" />
     <None Remove="Content\2d\UI\Backgrounds\MainMenuBkg.xnb" />
+    <None Remove="Content\2d\UI\Scene\oakTree.xnb" />
     <None Remove="Content\2d\Units\HeroSheet.xnb" />
     <None Remove="Content\2d\Units\Mobs\Imp.xnb" />
     <None Remove="Content\2d\Units\Mobs\Imp3.xnb" />
@@ -101,6 +102,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\2d\UI\Backgrounds\MainMenuBkg.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\2d\UI\Scene\oakTree.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\2d\Units\HeroSheet.xnb">
