@@ -25,8 +25,8 @@ namespace TopDownShooter
         {
             totalSpawns = 0;
             maxSpawns = 3;
-           
 
+            killValue = 2;
 
             health = 3;
             healthMax = health;

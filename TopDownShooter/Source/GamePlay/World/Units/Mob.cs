@@ -66,7 +66,7 @@ namespace TopDownShooter
 
                 if (Globals.GetDistance(pos, ENEMY.hero.pos) < GRID.slotDims.X * 1.2f)
                 {
-                    ENEMY.hero.GetHit(1);
+                    ENEMY.hero.GetHit(this, 1);
                     dead = true;
                 }
             }

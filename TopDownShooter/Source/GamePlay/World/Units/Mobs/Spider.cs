@@ -26,6 +26,8 @@ namespace TopDownShooter
             health = 3;
             healthMax = health;
 
+            killValue = 3;
+
             spawnTimer = new McTimer(8000);
             spawnTimer.AddToTimer(4000);
 

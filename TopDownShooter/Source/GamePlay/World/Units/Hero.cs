@@ -62,21 +62,7 @@ namespace TopDownShooter
                 checkScoll= true;
             }
 
-            if (Globals.keyboard.GetSinglePress("T"))
-            {
-                Vector2 tempLoc = GRID.GetSlotFromPixel(new Vector2(pos.X, pos.Y - 30), Vector2.Zero);
-                GridLocation loc = GRID.GetSlotFromLocation(tempLoc);
-
-                if (loc != null && !loc.filled && !loc.impassable)
-                {
-                    loc.SetToFilled(false);
-                    Building tempBuilding = new ArrowTower(new Vector2(pos.X, pos.Y - 30), new Vector2(1, 1), ownerId);
-                    tempBuilding.pos = GRID.GetPosFromLoc(tempLoc) + GRID.slotDims/2;
-                    GameGlobals.PassBuilding(tempBuilding);
-                }
-
-              
-            }
+            
 
             if (Globals.keyboard.GetSinglePress("D1"))
             {
@@ -123,6 +109,7 @@ namespace TopDownShooter
             {
                 if (currentSkill != null)
                 {
+                    currentSkill.targetEffect.done = true;
                     currentSkill.Reset();
                     currentSkill = null;
                 }

@@ -22,7 +22,7 @@ namespace TopDownShooter
     public class Player
     {
 
-        public int id;
+        public int id, gold;
         public Hero hero;
         public List<Unit> units = new List<Unit>();
         public List<SpawnPoint> spawnPoints = new List<SpawnPoint>();
@@ -31,6 +31,7 @@ namespace TopDownShooter
         public Player(int ID, XElement DATA) 
         {
             id = ID;
+            gold = 10;
             LoadData(DATA);
         }
         public virtual void Update(Player ENEMY, Vector2 OFFSET, SquareGrid GRID)

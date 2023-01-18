@@ -51,6 +51,8 @@ namespace TopDownShooter
             GameGlobals.PassBuilding = AddBuilding;
             GameGlobals.CheckScroll = CheckScroll;
             GameGlobals.PassSpawnPoint= AddSpawnPoint;
+            GameGlobals.PassGold = AddGold;
+
 
             GameGlobals.paused = false;
 
@@ -159,6 +161,21 @@ namespace TopDownShooter
         {
             effects.Add((Effect2d)INFO);
         }
+        
+        public virtual void AddGold(object INFO)
+        {
+            PlayerValuePacket packet = (PlayerValuePacket)INFO;
+
+            if (user.id == packet.playerId)
+            {
+                user.gold += (int)packet.value;
+            }
+            else if (aIPlayer.id == packet.playerId)
+            {
+                aIPlayer.gold += (int)packet.value;
+            }
+
+        }
 
         public virtual void AddMob(object INFO)
         {
@@ -252,7 +269,7 @@ namespace TopDownShooter
             for (int i = 0; i < SceneItemList.Count; i++)
             {
                 sType = Type.GetType("TopDownShooter." + SceneItemList[i].Element("type").Value, true);
-                sceneItems.Add((SceneItem)(Activator.CreateInstance(sType, new Vector2(Convert.ToInt32(SceneItemList[i].Element("Pos").Element("x").Value, Globals.culture), Convert.ToInt32(SceneItemList[i].Element("Pos").Element("y").Value, Globals.culture)), new Vector2(Convert.ToInt32(SceneItemList[i].Element("scale").Value, Globals.culture)))));
+                sceneItems.Add((SceneItem)(Activator.CreateInstance(sType, new Vector2(Convert.ToInt32(SceneItemList[i].Element("Pos").Element("x").Value, Globals.culture), Convert.ToInt32(SceneItemList[i].Element("Pos").Element("y").Value, Globals.culture)), new Vector2((float)Convert.ToDouble(SceneItemList[i].Element("scale").Value, Globals.culture)))));
             }
         }
 

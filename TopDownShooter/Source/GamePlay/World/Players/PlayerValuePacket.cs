@@ -8,16 +8,24 @@ using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
+
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 #endregion
+
 namespace TopDownShooter
 {
-    public class GameGlobals
+    public class PlayerValuePacket
     {
-        public static bool paused = false;
-        public static int score = 0;
-        public static PassObject PassProjectile, PassEffect, PassGold, PassMob, PassBuilding, PassSpawnPoint, CheckScroll;
+        public int playerId;
+
+        public object value;
+        public PlayerValuePacket(int PLAYERID, object VALUE) 
+        { 
+            playerId = PLAYERID;
+            value = VALUE;
+
+        }
     }
 }

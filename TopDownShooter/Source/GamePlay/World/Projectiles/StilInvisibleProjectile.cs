@@ -41,7 +41,7 @@ namespace TopDownShooter
                 {
                     if (Globals.GetDistance(UNITS[i].pos, pos) <= dims.X / 2)
                     {
-                        UNITS[i].GetHit(1.0f);
+                        UNITS[i].GetHit(owner, 1.0f);
                     }
                 }
                 currentTick++;
