@@ -34,7 +34,7 @@ namespace TopDownShooter
             skills.Add(new FlameWave(this));
 
         }
-        public override void Update(Vector2 OFFSET, Player ENEMY, SquareGrid GRID)
+        public override void Update(Vector2 OFFSET, Player ENEMY, SquareGrid GRID, LevelDrawManager LEVELDRAWMANAGER)
         {
             bool checkScoll = false;
 
@@ -115,7 +115,7 @@ namespace TopDownShooter
                 }
             }
 
-            base.Update(OFFSET, ENEMY, GRID);
+            base.Update(OFFSET, ENEMY, GRID, LEVELDRAWMANAGER);
         }
 
         public override void Draw(Vector2 OFFSET)

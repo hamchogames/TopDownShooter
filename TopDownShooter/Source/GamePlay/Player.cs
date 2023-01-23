@@ -34,20 +34,20 @@ namespace TopDownShooter
             gold = 10;
             LoadData(DATA);
         }
-        public virtual void Update(Player ENEMY, Vector2 OFFSET, SquareGrid GRID)
+        public virtual void Update(Player ENEMY, Vector2 OFFSET, SquareGrid GRID, LevelDrawManager LEVELDRAWMANAGER)
         {
 
             if (hero != null)
             {
-                hero.Update(OFFSET, ENEMY, GRID);
+                hero.Update(OFFSET, ENEMY, GRID, LEVELDRAWMANAGER);
             }
             for (int i = 0; i < spawnPoints.Count; i++)
             {
-                spawnPoints[i].Update(OFFSET, ENEMY, GRID);
+                spawnPoints[i].Update(OFFSET, ENEMY, GRID, LEVELDRAWMANAGER);
 
                 if (spawnPoints[i].dead)
                 {
-
+                    LEVELDRAWMANAGER.Remove(spawnPoints[i]);
                     spawnPoints.RemoveAt(i);
                     i--;
                 }
@@ -55,10 +55,11 @@ namespace TopDownShooter
 
             for (int i = 0; i < units.Count; i++)
             {
-                units[i].Update(OFFSET, ENEMY, GRID);
+                units[i].Update(OFFSET, ENEMY, GRID, LEVELDRAWMANAGER);
 
                 if (units[i].dead)
                 {
+                    LEVELDRAWMANAGER.Remove(units[i]);
                     ChangeScore(1);
                     units.RemoveAt(i);
                     i--;
@@ -67,11 +68,12 @@ namespace TopDownShooter
 
             for (int i = 0; i < buildings.Count; i++)
             {
-                buildings[i].Update(OFFSET, ENEMY, GRID);
+                buildings[i].Update(OFFSET, ENEMY, GRID, LEVELDRAWMANAGER);
 
                 if (buildings[i].dead)
                 {
-                   
+
+                    LEVELDRAWMANAGER.Remove(buildings[i]);
                     buildings.RemoveAt(i);
                     i--;
                 }
@@ -161,7 +163,7 @@ namespace TopDownShooter
 
         public virtual void Draw(Vector2 OFFSET)
         {
-            if(hero != null)
+          /*  if(hero != null)
             {
                 hero.Draw(OFFSET);
             }
@@ -184,7 +186,7 @@ namespace TopDownShooter
             {
                 spawnPoints[i].Draw(OFFSET);
 
-            }
+            }*/
 
            
         }

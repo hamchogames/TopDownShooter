@@ -53,6 +53,14 @@ namespace TopDownShooter
 
     #endregion
 
+
+        public virtual void Update(Vector2 OFFSET, LevelDrawManager LEVELDRAWMANAGER)
+        {
+            if(LEVELDRAWMANAGER != null)
+            {
+                UpdateDraw(OFFSET, LEVELDRAWMANAGER);
+            }
+        }
     public virtual void UpdateDraw(Vector2 OFFSET, LevelDrawManager LEVELDRAWMANAGER)
         {
             if(drawLocId == 0 && LEVELDRAWMANAGER != null)
