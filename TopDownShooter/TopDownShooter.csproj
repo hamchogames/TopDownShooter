@@ -33,6 +33,7 @@
     <None Remove="Content\2d\UI\Backgrounds\StandardDirt.xnb" />
     <None Remove="Content\2d\UI\Backgrounds\StandardGrass.xnb" />
     <None Remove="Content\2d\UI\Backgrounds\StandardSnow.xnb" />
+    <None Remove="Content\2d\UI\Backgrounds\WorldMap.xnb" />
     <None Remove="Content\2d\UI\Scene\oakTree.xnb" />
     <None Remove="Content\2d\Units\HeroSheet.xnb" />
     <None Remove="Content\2d\Units\Mobs\Imp.xnb" />
@@ -50,7 +51,9 @@
     <None Remove="Content\Fonts\Lindsey17.xnb" />
     <None Remove="Content\Fonts\Lindsey18.xnb" />
     <None Remove="Content\Fonts\Lindsey20.xnb" />
+    <None Remove="XML\Levels.xml" />
     <None Remove="XML\Levels\Level1.xml" />
+    <None Remove="XML\Levels\Level2.xml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\2d\Buildings\ArrowTower.xnb">
@@ -116,6 +119,9 @@
     <Content Include="Content\2d\UI\Backgrounds\StandardSnow.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\2d\UI\Backgrounds\WorldMap.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\2d\UI\Scene\oakTree.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -165,6 +171,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Fonts\Lindsey20.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="XML\Levels.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="XML\Levels\Level2.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="XML\Levels\Level1.xml">
