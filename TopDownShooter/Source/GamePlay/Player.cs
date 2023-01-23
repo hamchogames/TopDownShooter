@@ -118,6 +118,11 @@ namespace TopDownShooter
             tempObjects.AddRange(spawnPoints.ToList<AttackableObject>());
             tempObjects.AddRange(buildings.ToList<AttackableObject>());
             
+            if(hero != null)
+            {
+                tempObjects.Add(hero);
+            }
+
             return tempObjects;
         }
 

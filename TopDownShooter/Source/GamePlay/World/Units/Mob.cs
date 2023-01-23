@@ -22,11 +22,16 @@ namespace TopDownShooter
 {
     public class Mob : Unit
     {
-        public bool currentlyPathing;
+        public bool currentlyPathing, isAttacking;
 
-        public McTimer rePathTimer = new McTimer(200);
+        public float attackRange;
+
+        public McTimer rePathTimer = new McTimer(200), attackTimer = new McTimer(350);
         public Mob(string PATH, Vector2 POS, Vector2 DIMS, Vector2 FRAMES, int OWNERID) : base(PATH, POS, DIMS, FRAMES, OWNERID)
         {
+            attackRange = 50;
+
+            isAttacking = false;
             currentlyPathing = false;
             speed = 2.0f;
 
