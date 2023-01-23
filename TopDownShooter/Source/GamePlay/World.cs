@@ -31,6 +31,8 @@ namespace TopDownShooter
 
         public SquareGrid grid;
 
+        public TileBkg2d bkg;
+
         public LevelDrawManager levelDrawManager;
 
         public List<Projectile2d> projectiles = new List<Projectile2d>();
@@ -69,6 +71,8 @@ namespace TopDownShooter
 
 
             ui = new UI(ResetWorld);
+
+            bkg = new TileBkg2d("2d\\UI\\Backgrounds\\StandardDirt", new Vector2(-100, -100), new Vector2(120, 100), new Vector2(grid.totalPhysicalDims.X + 100, grid.totalPhysicalDims.Y + 100));
         }
         public virtual void Update()
         {
@@ -284,6 +288,7 @@ namespace TopDownShooter
 
         public virtual void Draw(Vector2 OFFSET)
         {
+            bkg.Draw(offset);
             grid.DrawGrid(offset);
 
             user.Draw(offset);

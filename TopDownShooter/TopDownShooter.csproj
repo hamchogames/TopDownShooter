@@ -30,6 +30,9 @@
     <None Remove="Content\2d\SpawnPoints\Portal.xnb" />
     <None Remove="Content\2d\SpawnPoints\Tower.xnb" />
     <None Remove="Content\2d\UI\Backgrounds\MainMenuBkg.xnb" />
+    <None Remove="Content\2d\UI\Backgrounds\StandardDirt.xnb" />
+    <None Remove="Content\2d\UI\Backgrounds\StandardGrass.xnb" />
+    <None Remove="Content\2d\UI\Backgrounds\StandardSnow.xnb" />
     <None Remove="Content\2d\UI\Scene\oakTree.xnb" />
     <None Remove="Content\2d\Units\HeroSheet.xnb" />
     <None Remove="Content\2d\Units\Mobs\Imp.xnb" />
@@ -102,6 +105,15 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\2d\UI\Backgrounds\MainMenuBkg.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\2d\UI\Backgrounds\StandardDirt.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\2d\UI\Backgrounds\StandardGrass.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\2d\UI\Backgrounds\StandardSnow.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\2d\UI\Scene\oakTree.xnb">
