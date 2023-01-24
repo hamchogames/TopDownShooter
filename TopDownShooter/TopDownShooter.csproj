@@ -13,7 +13,21 @@
   </PropertyGroup>
   <ItemGroup>
     <None Remove="Content\2d\Buildings\ArrowTower.xnb" />
+    <None Remove="Content\2d\Effects\AuraLine.xnb" />
+    <None Remove="Content\2d\Effects\CannonBallExplosion.xnb" />
+    <None Remove="Content\2d\Effects\CritEffect.xnb" />
+    <None Remove="Content\2d\Effects\FelhoundSpawn.xnb" />
     <None Remove="Content\2d\Effects\FireNova.xnb" />
+    <None Remove="Content\2d\Effects\Haste.xnb" />
+    <None Remove="Content\2d\Effects\HealRing.xnb" />
+    <None Remove="Content\2d\Effects\IceNova.xnb" />
+    <None Remove="Content\2d\Effects\ImmuneEffect.xnb" />
+    <None Remove="Content\2d\Effects\PoisenBubbles.xnb" />
+    <None Remove="Content\2d\Effects\Rez.xnb" />
+    <None Remove="Content\2d\Effects\Shield.xnb" />
+    <None Remove="Content\2d\Effects\ShieldSpawn.xnb" />
+    <None Remove="Content\2d\Effects\ShutDownAura.xnb" />
+    <None Remove="Content\2d\Effects\StunEffect.xnb" />
     <None Remove="Content\2d\Effects\TargetCircle.xnb" />
     <None Remove="Content\2d\Grid\Hill.xnb" />
     <None Remove="Content\2d\Hero.xnb" />
@@ -59,7 +73,49 @@
     <Content Include="Content\2d\Buildings\ArrowTower.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\2d\Effects\AuraLine.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\2d\Effects\CannonBallExplosion.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\2d\Effects\CritEffect.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\2d\Effects\FelhoundSpawn.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\2d\Effects\FireNova.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\2d\Effects\Haste.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\2d\Effects\HealRing.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\2d\Effects\IceNova.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\2d\Effects\ImmuneEffect.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\2d\Effects\PoisenBubbles.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\2d\Effects\Rez.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\2d\Effects\Shield.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\2d\Effects\ShieldSpawn.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\2d\Effects\ShutDownAura.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\2d\Effects\StunEffect.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\2d\Effects\TargetCircle.xnb">

@@ -32,7 +32,7 @@ namespace TopDownShooter
                 frameAnimationList.Add(new FrameAnimation(new Vector2(frameSize.X, frameSize.Y), frames, new Vector2(0, 0), 1, 133, 0, "Stand"));
 
             skills.Add(new FlameWave(this));
-
+            skills.Add(new Blink(this));
         }
         public override void Update(Vector2 OFFSET, Player ENEMY, SquareGrid GRID, LevelDrawManager LEVELDRAWMANAGER)
         {
@@ -71,9 +71,17 @@ namespace TopDownShooter
                
             }
 
+            if (Globals.keyboard.GetSinglePress("D2"))
+            {
+                currentSkill = skills[1];
+                currentSkill.Active = true;
+
+            }
+            GameGlobals.CheckScroll(pos);
+
             if (checkScoll)
             {
-                GameGlobals.CheckScroll(pos);
+                
                 SetAnimationByName("Walk");
             }
             else

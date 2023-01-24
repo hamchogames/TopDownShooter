@@ -47,7 +47,7 @@ namespace TopDownShooter
                         float xPercentLeft = Math.Min(1, xLeft / dims.X);
                         float yPercentLeft = Math.Min(1, yLeft / dims.Y);
 
-                        Globals.spriteBatch.Draw(myModel, new Rectangle((int)(pos.X + OFFSET.X + dims.X * i),(int)(pos.Y + OFFSET.Y + dims.Y * j), (int)Math.Ceiling(dims.X * xPercentLeft), (int)Math.Ceiling(dims.Y * yPercentLeft)), new Rectangle(0,0, (int)xPercentLeft * myModel.Bounds.Width, (int)yPercentLeft * myModel.Bounds.Height), Color.White, rot, new Vector2(0,0), new SpriteEffects(), 0);
+                        Globals.spriteBatch.Draw(myModel, new Rectangle((int)(pos.X + OFFSET.X + dims.X * i),(int)(pos.Y + OFFSET.Y + dims.Y * j), (int)Math.Ceiling(dims.X * xPercentLeft), (int)Math.Ceiling(dims.Y * yPercentLeft)), new Rectangle(0,0, (int)(xPercentLeft * myModel.Bounds.Width), (int)(yPercentLeft * myModel.Bounds.Height)), Color.White, rot, new Vector2(0,0), new SpriteEffects(), 0);
                     }
                 }
             }

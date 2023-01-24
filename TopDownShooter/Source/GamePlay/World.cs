@@ -232,7 +232,7 @@ namespace TopDownShooter
         {
             Vector2 tempPos = (Vector2)INFO;
 
-            float maxMovement = user.hero.speed * 3;
+            float maxMovement = user.hero.speed * 4.5f; //change the camera speed here
 
             float diff = 0;
 
