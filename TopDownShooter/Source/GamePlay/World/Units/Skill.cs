@@ -24,6 +24,8 @@ namespace TopDownShooter
         protected bool active;
         public bool done;
 
+        public Animated2d icon;
+
         public AttackableObject owner;
 
         public Effect2d targetEffect;

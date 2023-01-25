@@ -17,7 +17,7 @@ namespace TopDownShooter
 {
     public class Hero : Unit
     {
-     
+        SkillBar skillBar;
         public Hero(string PATH, Vector2 POS, Vector2 DIMS, Vector2 FRAMES, int OWNERID) : base(PATH, POS, DIMS, FRAMES, OWNERID)
         {
             
@@ -33,6 +33,22 @@ namespace TopDownShooter
 
             skills.Add(new FlameWave(this));
             skills.Add(new Blink(this));
+
+            skillBar = new SkillBar(new Vector2(80, Globals.screenHeight - 80), 52, 10);
+
+            for (int i=0; i<skills.Count; i++)
+            {
+                if( i<skillBar.slots.Count)
+                {
+                    skillBar.slots[i].skillButton = new SkillButon("2d\\Misc\\solid", new Vector2(0, 0), new Vector2(40, 40), SetSkill, skills[i]);
+
+
+                }
+                else
+                {
+                    break;
+                }
+            }
         }
         public override void Update(Vector2 OFFSET, Player ENEMY, SquareGrid GRID, LevelDrawManager LEVELDRAWMANAGER)
         {
@@ -64,7 +80,7 @@ namespace TopDownShooter
 
             
 
-            if (Globals.keyboard.GetSinglePress("D1"))
+           /* if (Globals.keyboard.GetSinglePress("D1"))
             {
                 currentSkill = skills[0];
                 currentSkill.Active = true;
@@ -76,7 +92,8 @@ namespace TopDownShooter
                 currentSkill = skills[1];
                 currentSkill.Active = true;
 
-            }
+            }*/
+
             GameGlobals.CheckScroll(pos);
 
             if (checkScoll)
@@ -123,12 +140,26 @@ namespace TopDownShooter
                 }
             }
 
+            skillBar.Update(Vector2.Zero);
+               
+
             base.Update(OFFSET, ENEMY, GRID, LEVELDRAWMANAGER);
         }
 
+        public virtual void SetSkill(object INFO)
+        {
+            if (INFO != null) {
+                currentSkill = (Skill)INFO;
+                currentSkill.Active = true;
+            }
+        }
+
+        
         public override void Draw(Vector2 OFFSET)
         {
             base.Draw(OFFSET);
+
+            skillBar.Draw(Vector2.Zero);
         }
     }
 }

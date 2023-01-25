@@ -38,8 +38,8 @@ namespace TopDownShooter
         }
 
         public virtual void Draw(Vector2 OFFSET)
-        {
-           Globals.normalEffect.Parameters["xSize"].SetValue(1.0f);
+        { 
+            Globals.normalEffect.Parameters["xSize"].SetValue(1.0f);
             Globals.normalEffect.Parameters["ySize"].SetValue(1.0f);
             Globals.normalEffect.Parameters["xSize"].SetValue(1.0f);
             Globals.normalEffect.Parameters["ySize"].SetValue(1.0f);

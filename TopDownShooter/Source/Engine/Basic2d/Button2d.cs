@@ -115,8 +115,10 @@ namespace TopDownShooter
 
             base.Draw(OFFSET);
 
+            if(font != null) { 
             Vector2 strDims = font.MeasureString(text);
             Globals.spriteBatch.DrawString(font, text, pos + OFFSET +new Vector2(-strDims.X/2, -strDims.Y/2), Color.Black);
+            }
         }
     }
 }
