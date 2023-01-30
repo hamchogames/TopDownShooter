@@ -17,7 +17,7 @@ namespace TopDownShooter
 {
     public class Hero : Unit
     {
-        SkillBar skillBar;
+        public SkillBar skillBar;
         public Hero(string PATH, Vector2 POS, Vector2 DIMS, Vector2 FRAMES, int OWNERID) : base(PATH, POS, DIMS, FRAMES, OWNERID)
         {
             

@@ -72,13 +72,15 @@ namespace TopDownShooter
             LoadData(levelId);
 
 
-            ui = new UI(ResetWorld);
+            ui = new UI(ResetWorld, user.hero);
 
             bkg = new TileBkg2d("2d\\UI\\Backgrounds\\StandardDirt", new Vector2(-100, -100), new Vector2(120, 100), new Vector2(grid.totalPhysicalDims.X + 100, grid.totalPhysicalDims.Y + 100));
         }
         public virtual void Update()
         {
-            if (!user.hero.dead && user.buildings.Count > 0 && !GameGlobals.paused )
+            ui.Update(this);
+
+            if (!user.hero.dead && user.buildings.Count > 0 && !GameGlobals.paused && !ui.skillMenu.active)
             {
                 levelDrawManager.Update();
 
@@ -152,7 +154,7 @@ namespace TopDownShooter
                 grid.showGrid = !grid.showGrid;
             }
 
-            ui.Update(this);
+            
 
         
         }

@@ -21,19 +21,24 @@ namespace TopDownShooter
 
         public Basic2d pauseOverlay;
 
-        public Button2d resetBtn;
+        public Button2d resetBtn, skillMenuBtn;
+
+        public SkillMenu skillMenu;
 
         public SpriteFont font;
 
         public QuantityDisplayBar healthBar;
 
-        public UI(PassObject RESET)
+        public UI(PassObject RESET, Hero HERO)
         {
             pauseOverlay = new Basic2d("2d\\Misc\\PauseOverlay", new Vector2(Globals.screenWidth / 2, Globals.screenHeight / 2), new Vector2(300, 300));
 
             font = Globals.content.Load<SpriteFont>("Fonts\\Arial16");
 
             resetBtn = new Button2d("2d\\Misc\\SimpleBtn", new Vector2(0, 0), new Vector2(96, 32), "Fonts\\Arial16", "Reset", RESET, null);
+            skillMenuBtn = new Button2d("2d\\Misc\\SimpleBtn", new Vector2(0, 0), new Vector2(96, 32), "Fonts\\Arial16", "Skills", ToggleSkillMenu, null);
+
+            skillMenu = new SkillMenu(HERO);
 
             healthBar = new QuantityDisplayBar(new Vector2(104, 16), 2, Color.Red);
         }
@@ -47,6 +52,14 @@ namespace TopDownShooter
                 resetBtn.Update(new Vector2(Globals.screenWidth / 2, Globals.screenHeight / 2 + 100));
 
             }
+            skillMenuBtn.Update(new Vector2(Globals.screenWidth - 100, Globals.screenHeight - 100));
+
+            skillMenu.Update();
+        }
+
+        public virtual void ToggleSkillMenu(object INFO)
+        {
+            skillMenu.ToggleActive();
         }
 
         public void Draw(World WORLD)
@@ -77,7 +90,10 @@ namespace TopDownShooter
             }
 
             healthBar.Draw(new Vector2(20, Globals.screenHeight - 40));
+            skillMenuBtn.Draw(new Vector2(Globals.screenWidth - 100, Globals.screenHeight - 100));
 
+
+            skillMenu.Draw();
 
             if (GameGlobals.paused)
             {
