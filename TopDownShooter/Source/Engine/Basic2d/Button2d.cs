@@ -28,7 +28,7 @@ namespace TopDownShooter
 
         public object info;
 
-        PassObject ButtonClicked;
+        public PassObject ButtonClicked;
 
         public Button2d(string PATH, Vector2 POS, Vector2 DIMS, string FONTPATH, string TEXT, PassObject BUTTONCLICKED, object INFO)
             : base(PATH, POS, DIMS)

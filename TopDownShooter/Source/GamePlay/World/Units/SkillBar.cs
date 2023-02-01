@@ -79,6 +79,8 @@ namespace TopDownShooter
 
         public virtual void Draw(Vector2 OFFSET)
         {
+            
+
             for (int i = 0; i < slots.Count; i++)
             {
                 slots[i].Draw(firstPos + new Vector2(spacer * i, 0));

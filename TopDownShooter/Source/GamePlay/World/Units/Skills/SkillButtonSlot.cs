@@ -49,7 +49,7 @@ namespace TopDownShooter
                 Globals.normalEffect.Parameters["ySize"].SetValue(1.0f);
                 Globals.normalEffect.Parameters["xSize"].SetValue(1.0f);
                 Globals.normalEffect.Parameters["ySize"].SetValue(1.0f);
-                Globals.normalEffect.Parameters["filterColor"].SetValue(Color.Black.ToVector4());
+                Globals.normalEffect.Parameters["filterColor"].SetValue(Color.White.ToVector4());
                 Globals.normalEffect.CurrentTechnique.Passes[0].Apply();
 
                 slotIcon.Draw(OFFSET);

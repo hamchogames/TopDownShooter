@@ -23,6 +23,7 @@ namespace TopDownShooter
     {
         protected bool active;
         public bool done;
+        public int selectionType;
 
         public Animated2d icon;
 
@@ -36,6 +37,8 @@ namespace TopDownShooter
             active = false;
             done = false;
 
+            selectionType = 1;
+
             owner = OWNER;
 
             targetEffect = new TargetingCircle(new Vector2(0,0), new Vector2(150,150));
@@ -48,9 +51,10 @@ namespace TopDownShooter
             {
                 return active;
             }
+
             set
             {
-                if (value && !active)
+                if (value && !active && targetEffect != null)
                 {
                     targetEffect.done = false;
                     GameGlobals.PassEffect(targetEffect);

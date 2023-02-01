@@ -148,9 +148,15 @@ namespace TopDownShooter
 
         public virtual void SetSkill(object INFO)
         {
+           
+
             if (INFO != null) {
-                currentSkill = (Skill)INFO;
+
+                SkillSelectionTypePacket tempPacket = (SkillSelectionTypePacket)INFO;
+
+                currentSkill = tempPacket.skill;
                 currentSkill.Active = true;
+                currentSkill.selectionType = tempPacket.selectionType;
             }
         }
 

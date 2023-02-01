@@ -12,12 +12,15 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
+using SharpDX.MediaFoundation;
 #endregion
 
 namespace TopDownShooter
 {
     public class SkillButon : Button2d
     {
+        public Vector2 lastOffset;
+
         public Skill skill;
 
         public SkillButtonSlot slot;
@@ -32,11 +35,28 @@ namespace TopDownShooter
 
         public override void Update(Vector2 OFFSET)
         {
+            lastOffset = OFFSET;
+
             if (skill != null) 
             { 
 
             base.Update(OFFSET);
             }
+        }
+
+        public override void RunBtnClick()
+        {
+            if (ButtonClicked != null)
+            {
+                SkillSelectionTypePacket tempPacket = new SkillSelectionTypePacket(1,(Skill)info);
+                if (Hover(lastOffset))
+                {
+                    tempPacket.selectionType = 0;
+                }
+                    ButtonClicked(tempPacket);
+            }
+
+            Reset();
         }
 
 
