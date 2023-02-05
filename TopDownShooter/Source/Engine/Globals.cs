@@ -35,6 +35,7 @@ namespace TopDownShooter
 
         public static Effect normalEffect;
 
+        public static OptionsMenu optionsMenu;
 
         public static McKeyboard keyboard;
         public static McMouseControl mouse;

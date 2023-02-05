@@ -12,7 +12,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using System.Security.Cryptography.X509Certificates;
-using TopDownShooter;
+using TopDownShooter.Source;
 #endregion
 
 namespace TopDownShooter
@@ -65,6 +65,8 @@ namespace TopDownShooter
 
             mainMenu = new MainMenu(ChangeGameState, ExitGame);
             gamePlay = new GamePlay(ChangeGameState);
+
+            Globals.optionsMenu = new OptionsMenu();
         }
 
 
@@ -88,7 +90,11 @@ namespace TopDownShooter
             {
                 gamePlay.Update();
             }
-            
+            else if (Globals.gameState == 2)
+            {
+                Globals.optionsMenu.Update();
+            }
+
 
 
             Globals.keyboard.UpdateOld();
@@ -122,7 +128,11 @@ namespace TopDownShooter
             {
                 gamePlay.Draw();
             }
-           
+            else if (Globals.gameState == 2)
+            {
+                Globals.optionsMenu.Draw();
+            }
+
 
             Globals.normalEffect.Parameters["xSize"].SetValue((float)cursor.myModel.Bounds.Width);
             Globals.normalEffect.Parameters["ySize"].SetValue((float)cursor.myModel.Bounds.Height);

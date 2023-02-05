@@ -31,6 +31,8 @@
     <None Remove="Content\2d\Effects\TargetCircle.xnb" />
     <None Remove="Content\2d\Grid\Hill.xnb" />
     <None Remove="Content\2d\Hero.xnb" />
+    <None Remove="Content\2d\Misc\ArrowLeft.xnb" />
+    <None Remove="Content\2d\Misc\ArrowRight.xnb" />
     <None Remove="Content\2d\Misc\circle.xnb" />
     <None Remove="Content\2d\Misc\CursorArrow.xnb" />
     <None Remove="Content\2d\Misc\PauseOverlay.xnb" />
@@ -128,6 +130,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\2d\Hero.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\2d\Misc\ArrowLeft.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\2d\Misc\ArrowRight.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\2d\Misc\circle.xnb">
