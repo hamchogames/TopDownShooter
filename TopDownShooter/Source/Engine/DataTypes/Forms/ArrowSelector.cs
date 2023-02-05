@@ -76,6 +76,16 @@ namespace TopDownShooter
             }
         }
 
+        public virtual XElement ReturnXML()
+        {
+            XElement xml = new XElement("Option",
+                                     new XElement("name", title),
+                                     new XElement("selected", selected),
+                                     new XElement("selectedName", options[selected].name));
+
+            return xml;
+        }
+
         public virtual void Draw(Vector2 OFFSET, SpriteFont FONT)
         {
             for (int i = 0; i < buttons.Count; i++)

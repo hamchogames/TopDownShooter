@@ -45,6 +45,10 @@ namespace TopDownShooter
                 arrowSelectors[arrowSelectors.Count - 1].AddOption(new FormOption("" + i, i));
             }
             arrowSelectors[arrowSelectors.Count - 1].selected = (int)(arrowSelectors[arrowSelectors.Count - 1].options.Count / 2);
+
+            XDocument xml = Globals.save.GetFile("XML\\options.xml");
+
+            LoadData(xml);
         }
 
         public virtual void Update()
@@ -58,7 +62,51 @@ namespace TopDownShooter
 
         public virtual void ExitClick(object INFO)
         {
+            SaveOptions();
+
             Globals.gameState = 0;
+        }
+
+        public virtual void LoadData(XDocument DATA)
+        {
+            if(DATA != null)
+            {
+                List<string> allOptions = new List<string>();
+
+                for (int i = 0; i < arrowSelectors.Count; i++)
+                {
+                    allOptions.Add(arrowSelectors[i].title);
+                }
+
+                for (int i = 0; i < allOptions.Count;i++) {
+                    List<XElement> optionList = (from t in DATA.Element("Root").Element("Options").Descendants("Option")
+                                                 where t.Element("name").Value == allOptions[i]
+                                                 select t).ToList<XElement>();
+                    if (optionList.Count > 0)
+                    {
+                        for (int j = 0; j < arrowSelectors.Count; j++)
+                        {
+                            if (arrowSelectors[j].title == allOptions[i])
+                            {
+                                arrowSelectors[j].selected = Convert.ToInt32(optionList[0].Element("selected").Value, Globals.culture);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        public virtual void SaveOptions()
+        {
+            XDocument xml = new XDocument(new XElement("Root", 
+                                                 new XElement("Options", "")));
+
+            for (int i = 0; i< arrowSelectors.Count; i++)
+            {
+                xml.Element("Root").Element("Options").Add(arrowSelectors[i].ReturnXML());
+            }
+
+            Globals.save.HandleSaveFormates(xml, "options.xml");
         }
 
         public virtual void Draw()

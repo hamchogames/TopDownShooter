@@ -31,14 +31,16 @@ namespace TopDownShooter
             _graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             IsMouseVisible = false;
+
+            Globals.appDataFilePath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
         }
 
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-
-           Globals.screenHeight = 900; //1600
             Globals.screenWidth = 1600; //900
+            Globals.screenHeight = 900; //1600
+            
 
             _graphics.PreferredBackBufferWidth = Globals.screenWidth;
             _graphics.PreferredBackBufferHeight = Globals.screenHeight;
@@ -52,6 +54,8 @@ namespace TopDownShooter
         {
             Globals.content = this.Content;
             Globals.spriteBatch = new SpriteBatch(GraphicsDevice);
+
+            Globals.save = new Save(1, "TopDownShooter");
 
             // TODO: use this.Content to load your game content here
 

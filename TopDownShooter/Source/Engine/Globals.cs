@@ -26,6 +26,8 @@ namespace TopDownShooter
     {
         public static int screenHeight, screenWidth, gameState = 0;
 
+        public static string appDataFilePath;
+
         public static Random rand = new Random();
 
         public static System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("en-US");
@@ -36,6 +38,8 @@ namespace TopDownShooter
         public static Effect normalEffect;
 
         public static OptionsMenu optionsMenu;
+
+        public static Save save;
 
         public static McKeyboard keyboard;
         public static McMouseControl mouse;
