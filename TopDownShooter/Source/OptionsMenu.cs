@@ -24,8 +24,12 @@ namespace TopDownShooter
 
         SpriteFont font;
 
-        public OptionsMenu() 
+        PassObject ApplyOptions;
+
+        public OptionsMenu(PassObject APPLYOPTION) 
         {
+            ApplyOptions = APPLYOPTION;
+
             exitBtn = new Button2d("2d\\Misc\\SimpleBtn", new Vector2(Globals.screenWidth / 2, Globals.screenHeight - 100), new Vector2(96, 32), "Fonts\\Arial16", "Exit", ExitClick, null);
 
             font = Globals.content.Load<SpriteFont>("Fonts\\Arial16");
@@ -65,6 +69,19 @@ namespace TopDownShooter
             SaveOptions();
 
             Globals.gameState = 0;
+        }
+
+        public virtual FormOption GetOptionValue(string NAME)
+        {
+            for (int i = 0; i<arrowSelectors.Count; i++)
+            {
+                if (arrowSelectors[i].title == NAME)
+                {
+                    return arrowSelectors[i].GetCurrentOption();
+                }
+            }
+
+            return null;
         }
 
         public virtual void LoadData(XDocument DATA)
@@ -107,6 +124,8 @@ namespace TopDownShooter
             }
 
             Globals.save.HandleSaveFormates(xml, "options.xml");
+
+            ApplyOptions(null);
         }
 
         public virtual void Draw()

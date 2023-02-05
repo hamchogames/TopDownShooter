@@ -59,6 +59,7 @@
     <None Remove="Content\2d\Units\Mobs\Imp3.xnb" />
     <None Remove="Content\2d\Units\Mobs\ImpBlue.xnb" />
     <None Remove="Content\2d\Units\Mobs\Spider.xnb" />
+    <None Remove="Content\Audio\RomanBuilderMusic_Loop.xnb" />
     <None Remove="Content\Effects\Normal.xnb" />
     <None Remove="Content\Effects\NormalFlat.fx" />
     <None Remove="Content\Fonts\Arial16.xnb" />
@@ -216,6 +217,9 @@
     <Content Include="Content\2d\Units\Mobs\Spider.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\Audio\RomanBuilderMusic_Loop.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\Effects\Normal.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -265,7 +269,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\2d\UI\Backgrounds\Icons\" />
-    <Folder Include="Content\Audio\" />
   </ItemGroup>
   <Target Name="RestoreDotnetTools" BeforeTargets="Restore">
     <Message Text="Restoring dotnet tools" Importance="High" />

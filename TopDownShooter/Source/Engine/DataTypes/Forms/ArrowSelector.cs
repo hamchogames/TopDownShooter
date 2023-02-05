@@ -76,6 +76,11 @@ namespace TopDownShooter
             }
         }
 
+        public virtual FormOption GetCurrentOption()
+        {
+            return options[selected];
+        }
+
         public virtual XElement ReturnXML()
         {
             XElement xml = new XElement("Option",

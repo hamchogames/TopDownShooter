@@ -30,7 +30,7 @@ namespace TopDownShooter
         {
             _graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
-            IsMouseVisible = false;
+            
 
             Globals.appDataFilePath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
         }
@@ -70,7 +70,9 @@ namespace TopDownShooter
             mainMenu = new MainMenu(ChangeGameState, ExitGame);
             gamePlay = new GamePlay(ChangeGameState);
 
-            Globals.optionsMenu = new OptionsMenu();
+            Globals.optionsMenu = new OptionsMenu(ApplyOptions);
+
+            Globals.soundControl = new SoundControl("Audio\\RomanBuilderMusic_Loop");
         }
 
 
@@ -105,6 +107,18 @@ namespace TopDownShooter
             Globals.mouse.UpdateOld();
 
             base.Update(gameTime);
+        }
+
+        public virtual void ApplyOptions(object INFO)
+        {
+            FormOption musicVolume = Globals.optionsMenu.GetOptionValue("Music Volume");
+            float musicVolumePercent = 1.0f;
+            if (musicVolumePercent != null)
+            {
+                musicVolumePercent = (float)Convert.ToDecimal(musicVolume.value, Globals.culture) / 30.0f;
+            }
+
+            Globals.soundControl.AdjustVolume(musicVolumePercent);
         }
 
         public virtual void ChangeGameState(object INFO)

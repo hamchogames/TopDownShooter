@@ -43,8 +43,10 @@ namespace TopDownShooter
 
         public static McKeyboard keyboard;
         public static McMouseControl mouse;
+        public static SoundControl soundControl;
 
         public static GameTime gameTime;
+
 
 
         public static float GetDistance(Vector2 pos, Vector2 target)
