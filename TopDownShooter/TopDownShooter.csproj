@@ -60,6 +60,17 @@
     <None Remove="Content\2d\Units\Mobs\ImpBlue.xnb" />
     <None Remove="Content\2d\Units\Mobs\Spider.xnb" />
     <None Remove="Content\Audio\RomanBuilderMusic_Loop.xnb" />
+    <None Remove="Content\Audio\Sounds\Projectiles\ArrowFire.xnb" />
+    <None Remove="Content\Audio\Sounds\Projectiles\ArrowHit.xnb" />
+    <None Remove="Content\Audio\Sounds\Projectiles\CannonHit.xnb" />
+    <None Remove="Content\Audio\Sounds\Projectiles\CannonShoot.xnb" />
+    <None Remove="Content\Audio\Sounds\Projectiles\CrystalHit.xnb" />
+    <None Remove="Content\Audio\Sounds\Projectiles\EarthHit.xnb" />
+    <None Remove="Content\Audio\Sounds\Projectiles\EarthShoot.xnb" />
+    <None Remove="Content\Audio\Sounds\Projectiles\FireSound.xnb" />
+    <None Remove="Content\Audio\Sounds\Projectiles\IceHit.xnb" />
+    <None Remove="Content\Audio\Sounds\Projectiles\LightningShoot.xnb" />
+    <None Remove="Content\Audio\Sounds\Projectiles\Shock.xnb" />
     <None Remove="Content\Effects\Normal.xnb" />
     <None Remove="Content\Effects\NormalFlat.fx" />
     <None Remove="Content\Fonts\Arial16.xnb" />
@@ -218,6 +229,39 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Audio\RomanBuilderMusic_Loop.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Audio\Sounds\Projectiles\ArrowFire.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Audio\Sounds\Projectiles\ArrowHit.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Audio\Sounds\Projectiles\CannonHit.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Audio\Sounds\Projectiles\CannonShoot.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Audio\Sounds\Projectiles\CrystalHit.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Audio\Sounds\Projectiles\EarthHit.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Audio\Sounds\Projectiles\EarthShoot.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Audio\Sounds\Projectiles\FireSound.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Audio\Sounds\Projectiles\IceHit.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Audio\Sounds\Projectiles\LightningShoot.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Audio\Sounds\Projectiles\Shock.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Effects\Normal.xnb">

@@ -73,6 +73,9 @@ namespace TopDownShooter
             Globals.optionsMenu = new OptionsMenu(ApplyOptions);
 
             Globals.soundControl = new SoundControl("Audio\\RomanBuilderMusic_Loop");
+
+            Globals.soundControl.AddSound("Shoot", "Audio\\Sounds\\Projectiles\\EarthShoot", .4f);
+            Globals.soundControl.AddSound("Hit", "Audio\\Sounds\\Projectiles\\EarthHit", .4f);
         }
 
 
