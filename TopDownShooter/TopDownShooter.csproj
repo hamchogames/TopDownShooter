@@ -72,7 +72,7 @@
     <None Remove="Content\Audio\Sounds\Projectiles\LightningShoot.xnb" />
     <None Remove="Content\Audio\Sounds\Projectiles\Shock.xnb" />
     <None Remove="Content\Effects\Normal.xnb" />
-    <None Remove="Content\Effects\NormalFlat.fx" />
+    <None Remove="Content\Effects\Throb.xnb" />
     <None Remove="Content\Fonts\Arial16.xnb" />
     <None Remove="Content\Fonts\Arial20Bold.xnb" />
     <None Remove="Content\Fonts\Arial24.xnb" />
@@ -267,7 +267,7 @@
     <Content Include="Content\Effects\Normal.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Effects\NormalFlat.fx">
+    <Content Include="Content\Effects\Throb.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Fonts\Arial16.xnb">

@@ -35,7 +35,7 @@ namespace TopDownShooter
         public static ContentManager content;
         public static SpriteBatch spriteBatch;
 
-        public static Effect normalEffect;
+        public static Effect normalEffect, throbEffect;
 
         public static OptionsMenu optionsMenu;
 
