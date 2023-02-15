@@ -39,6 +39,7 @@
     <None Remove="Content\2d\Misc\shade.xnb" />
     <None Remove="Content\2d\Misc\SimpleBtn.xnb" />
     <None Remove="Content\2d\Misc\solid.xnb" />
+    <None Remove="Content\2d\Misc\XButton.xnb" />
     <None Remove="Content\2d\Projectiles\AcidBall.xnb" />
     <None Remove="Content\2d\Projectiles\Arrow.xnb" />
     <None Remove="Content\2d\Projectiles\Fireball.xnb" />
@@ -166,6 +167,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\2d\Misc\solid.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\2d\Misc\XButton.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\2d\Projectiles\AcidBall.xnb">

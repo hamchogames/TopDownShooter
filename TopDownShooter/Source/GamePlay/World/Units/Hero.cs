@@ -17,11 +17,15 @@ namespace TopDownShooter
 {
     public class Hero : Unit
     {
+        public string name;
+
         public SkillBar skillBar;
         public Hero(string PATH, Vector2 POS, Vector2 DIMS, Vector2 FRAMES, int OWNERID) : base(PATH, POS, DIMS, FRAMES, OWNERID)
         {
             
             speed = 2.0f;
+
+            name = "Zavix";
 
             health = 5;
             healthMax = health;

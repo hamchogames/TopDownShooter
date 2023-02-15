@@ -22,7 +22,7 @@ namespace TopDownShooter
 
         public Vector2 offset;
 
-
+        public CharacterMenu characterMenu;
 
         public UI ui;
 
@@ -71,6 +71,7 @@ namespace TopDownShooter
 
             LoadData(levelId);
 
+            characterMenu = new CharacterMenu(user.hero);
 
             ui = new UI(ResetWorld, user.hero);
 
@@ -80,7 +81,7 @@ namespace TopDownShooter
         {
             ui.Update(this);
 
-            if (!user.hero.dead && user.buildings.Count > 0 && !GameGlobals.paused && !ui.skillMenu.active)
+            if (!DontUpdate())
             {
                 levelDrawManager.Update();
 
@@ -133,17 +134,21 @@ namespace TopDownShooter
                 }
             }
 
+            characterMenu.Update();
+
+            if (grid != null)
+            {
+                grid.Update(offset);
+            }
+
+
             if (Globals.keyboard.GetSinglePress("Back"))
             {
                 ResetWorld(null);
                 ChangeGameState(0);
             }
 
-            if(grid != null)
-            {
-                grid.Update(offset);
-            }
-
+            
             if (Globals.keyboard.GetSinglePress("Space"))
             {
                 GameGlobals.paused = !GameGlobals.paused;
@@ -154,9 +159,14 @@ namespace TopDownShooter
                 grid.showGrid = !grid.showGrid;
             }
 
-            
+            if (Globals.keyboard.GetSinglePress("C"))
+            {
+                characterMenu.Active = !characterMenu.Active;
+            }
 
-        
+
+
+
         }
 
         public virtual void AddBuilding(object INFO)
@@ -284,6 +294,15 @@ namespace TopDownShooter
 
         }
 
+        public virtual bool DontUpdate()
+        {
+            if(user.hero.dead || user.buildings.Count == 0 || GameGlobals.paused || ui.skillMenu.active || characterMenu.Active)
+            {
+                return true;
+            }
+            return false;
+        }
+
         public virtual void LoadData(int LEVEL)
         {
             XDocument xml = XDocument.Load("XML\\Levels\\Level" + LEVEL + ".xml");
@@ -351,6 +370,8 @@ namespace TopDownShooter
             }
 
             ui.Draw(this);
+
+            characterMenu.Draw();
         }
         
     }
