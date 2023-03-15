@@ -19,10 +19,14 @@ namespace TopDownShooter
     public class CharacterMenu : Menu2d
     {
         public Hero hero;
+
+        public TextZone textZone;
         public CharacterMenu(Hero HERO) 
             : base(new Vector2(Globals.screenWidth / 2, Globals.screenHeight / 2), new Vector2(350, 500), null)
         {
             hero= HERO;
+
+            textZone = new TextZone(new Vector2(0, 0), "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.", (int)(dims.X * .9f), 22, "Fonts\\Arial16",Color.Gray);
         }
 
         public override void Update()
@@ -46,6 +50,8 @@ namespace TopDownShooter
                 string tempStr = "" + hero.name;
                 Vector2 strDims = font.MeasureString(tempStr);
                 Globals.spriteBatch.DrawString(font, tempStr, topLeft + new Vector2(bkg.dims.X/2 - strDims.X/2, 40), Color.Black);
+
+                textZone.Draw(topLeft + new Vector2(10, 100));
             }
         }
     }
